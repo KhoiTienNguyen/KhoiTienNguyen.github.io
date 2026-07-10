@@ -1,0 +1,1807 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Iceland Visual Guide V2</title>
+  <style>
+    :root {
+      --ink:#172027; --muted:#5d6973; --paper:#f7f4ee; --panel:#fff;
+      --line:#d7d0c3; --blue:#2e6f88; --green:#517a4a; --rust:#9a553d; --amber:#b9872d; --stone:#5d6870;
+    }
+    * { box-sizing:border-box; }
+    body { margin:0; background:var(--paper); color:var(--ink); font-family:Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; line-height:1.45; }
+    a { color:var(--blue); }
+    .cover { min-height:92vh; display:grid; grid-template-columns:minmax(320px,.85fr) minmax(420px,1.15fr); gap:18px; padding:40px; background:var(--ink); color:#fff; }
+    .cover h1 { font-size:clamp(48px,8vw,94px); line-height:.95; margin:40px 0 24px; letter-spacing:0; }
+    .cover p { max-width:650px; color:#dbe3e4; font-size:20px; }
+    .hero-mosaic { display:grid; grid-template-columns:1fr 1fr; gap:10px; min-height:620px; }
+    .hero-mosaic img { width:100%; height:100%; object-fit:cover; border-radius:8px; }
+    .hero-mosaic img:first-child { grid-row:span 2; }
+    .eyebrow,.spot-kicker { text-transform:uppercase; letter-spacing:.11em; color:var(--muted); font-weight:800; font-size:12px; margin:0 0 8px; }
+    section { max-width:1320px; margin:0 auto; padding:44px 38px; }
+    h2 { font-size:clamp(34px,5vw,58px); line-height:1; margin:0 0 14px; letter-spacing:0; }
+    h3 { font-size:28px; margin:0 0 4px; }
+    h4 { font-size:22px; margin:0 0 8px; }
+    .subtitle { font-size:20px; max-width:900px; color:#2c3a42; }
+    .narrative,.chapter { border-top:8px solid var(--blue); }
+    .accent-green { border-top-color:var(--green); } .accent-rust { border-top-color:var(--rust); }
+    .accent-amber { border-top-color:var(--amber); } .accent-stone { border-top-color:var(--stone); }
+    .narrative-grid { display:grid; grid-template-columns:1.1fr .9fr; gap:24px; align-items:start; }
+    .narrative p,.chapter-copy p { max-width:780px; font-size:17px; }
+    .rhythm { display:grid; gap:10px; }
+    .rhythm div { background:#fff; border:1px solid var(--line); border-radius:8px; padding:16px; }
+    .rhythm strong { display:block; font-size:24px; margin-bottom:4px; }
+    .group-heading { margin:34px 0 16px; padding-top:18px; border-top:1px solid var(--line); }
+    .group-heading p { color:var(--muted); margin:0; }
+    .spot-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:20px; }
+    .compact-grid { grid-template-columns:repeat(3,minmax(0,1fr)); }
+    .spot { background:#fff; border:1px solid var(--line); border-radius:8px; padding:20px; break-inside:avoid; }
+    .spot.featured { grid-column:1 / -1; }
+    .spot-title-row { display:flex; gap:14px; align-items:flex-start; justify-content:space-between; }
+    .spot p { margin:0 0 10px; color:#2b363d; }
+    .spot .what { font-size:17px; }
+    .spot .why { color:#40505a; }
+    .rating { flex:0 0 auto; min-width:76px; border:1px solid var(--line); border-radius:8px; padding:6px 8px; text-align:center; background:var(--paper); }
+    .rating strong { display:block; font-size:18px; line-height:1; color:var(--blue); }
+    .rating span { display:block; margin-top:4px; font-size:10px; text-transform:uppercase; letter-spacing:.08em; color:var(--muted); }
+    .spot-meta,.source-line { font-size:12px; color:var(--muted); margin-bottom:10px; }
+    .images { display:grid; gap:10px; height:420px; }
+    .featured .images { height:620px; }
+    .compact .images { height:245px; }
+    .images figure { margin:0; overflow:hidden; border-radius:7px; background:#ddd; }
+    .images img { width:100%; height:100%; object-fit:cover; display:block; }
+    .fit-contain .images img { object-fit:contain; background:#edf0ee; }
+    .count-1 { grid-template-columns:1fr; }
+    .count-2 { grid-template-columns:1fr 1fr; }
+    .count-3 { grid-template-columns:1fr 1fr; grid-template-rows:1.15fr .85fr; }
+    .count-3 figure:first-child { grid-column:span 2; }
+    .count-4 { grid-template-columns:1fr 1fr; grid-template-rows:1fr 1fr; }
+    .count-5 { grid-template-columns:1fr 1fr 1fr; grid-template-rows:1.25fr .85fr; }
+    .count-5 figure:first-child { grid-column:span 2; }
+    .count-5 figure:nth-child(2) { grid-column:3; grid-row:1 / span 2; }
+    .count-6 { grid-template-columns:repeat(3,1fr); grid-template-rows:1fr 1fr; }
+    .sources table { width:100%; border-collapse:collapse; background:#fff; font-size:12px; }
+    .sources td,.sources th { border-bottom:1px solid var(--line); padding:8px; text-align:left; }
+    @media (max-width:900px) { .cover,.narrative-grid,.spot-grid,.compact-grid { grid-template-columns:1fr; } .cover { padding:24px; } .hero-mosaic { min-height:360px; } }
+    @media print { @page { size:A4; margin:12mm; } .cover { page-break-after:always; } .chapter,.narrative,.sources { page-break-before:always; } .spot { box-shadow:none; } }
+  </style>
+</head>
+<body>
+  <header class="cover">
+    <div>
+      <p class="eyebrow">Early September planning booklet</p>
+      <h1>Iceland Visual Guide</h1>
+      <p>A guide-style rebuild: the core trip logic comes first, then grouped visual spreads for the places, hikes, waterfalls, towns, lagoons, and detours mentioned in the research.</p>
+    </div>
+    <div class="hero-mosaic"><img src="web_images/landmannalaugar-01-visiting-landmannalaugar-10-tips-all-info-route.jpg" alt="Iceland preview">
+<img src="web_images/jokulsarlon-01-jokulsarlon-glacier-lagoon-the-crown-jewel-of-iceland-s-nature.jpg" alt="Iceland preview">
+<img src="web_images/reynisfjara-01-reynisfjara-discover-iceland-s-black-sand-beach.jpg" alt="Iceland preview">
+<img src="web_images/kirkjufell-01-kirkjufell-mountain-snaefellsnes-peninsula-iceland-travel.jpg" alt="Iceland preview"></div>
+  </header>
+  <main>
+    
+            <section class="narrative accent-blue">
+              <p class="eyebrow">Trip strategy</p>
+              <h2>Start With The Shape</h2>
+              <div class="narrative-grid">
+                <div><p>For a 9 to 13 day first Iceland trip, the strongest plan is not a maximal checklist. It is a short Reykjavik landing, one classic orientation day on the Golden Circle, a properly paced South Coast drive, and one real hiking or highland component.</p><p>The South Coast and the highlands are where extra days pay off. Reykjavik is useful and enjoyable, but it should not consume the trip unless you deliberately want an urban, museum, pool, and food rhythm. The Golden Circle is worth doing, but it is usually a focused day rather than a multi-day destination.</p><p>Think in modules: 2 days Reykjavik, 1 day Golden Circle, 3 to 5 days South Coast, and 3 to 4 days for Landmannalaugar, Laugavegur, or Thorsmork. If the trip reaches 11 to 13 days, add Snaefellsnes or reshape the trip into a larger Ring Road plan.</p></div>
+                <div class="rhythm"><div><strong>9 days</strong><span>Reykjavik, Golden Circle, South Coast, and a short highland hiking plan.</span></div><div><strong>11 days</strong><span>Same spine, plus Snaefellsnes or one relaxed western add-on.</span></div><div><strong>13 days</strong><span>Either a deeper south/highlands trip or a smoother Ring Road continuation.</span></div></div>
+              </div>
+            </section>
+            
+            <section class="narrative accent-green">
+              <p class="eyebrow">Timing notes</p>
+              <h2>September Changes The Rules</h2>
+              <div class="narrative-grid">
+                <div><p>Early September is a sweet spot: long enough days for road-tripping, fewer peak-summer crowds, cooler atmosphere, and a real chance of aurora on clear dark nights away from city light. It is also the moment when highland logistics become time-sensitive.</p><p>Plan for wind and rain as normal rather than as bad luck. Waterproof layers, warm mid-layers, offline maps, and flexible driving days matter more than a perfectly optimized route. Highland buses, hut bookings, parking rules, and F-road conditions should be checked close to departure.</p><p>Treat aurora as a bonus, geothermal bathing as year-round culture, and Reykjanes volcanic updates as something to re-check shortly before arrival.</p></div>
+                <div class="rhythm"><div><strong>Daylight</strong><span>Roughly 12 to 14 hours around early September, enough for full driving days.</span></div><div><strong>Highlands</strong><span>Go earlier in the month if Landmannalaugar or Thorsmork is important.</span></div><div><strong>Safety</strong><span>Sneaker waves, river crossings, and weather exposure deserve real respect.</span></div></div>
+              </div>
+            </section>
+            
+    
+            <section class="chapter accent-blue">
+              <p class="eyebrow">Core spine</p>
+              <h2>Reykjavik, Reykjanes, And Arrival Days</h2>
+              <p class="subtitle">Use the capital as a soft landing, weather buffer, and culture/pool base, not as the whole trip.</p>
+              <div class="chapter-copy"><p>Two days is the clean default. Spend one day getting oriented on foot: Hallgrimskirkja for the skyline, Harpa and the waterfront for architecture, Old Harbour and Grandi for food and wandering, and a public pool or lagoon for the local bathing rhythm.</p><p>The second day should stay flexible. If the weather is rough, lean into Perlan, museums, cafes, and design shops. If the weather is open, use it for Reykjanes or an easy coastal ride. Blue Lagoon and Sky Lagoon are polished spa choices; Nautholsvik and public pools feel more local.</p><p>Reykjanes is useful near airport days, but in 2026 it should be kept flexible because volcanic and geothermal conditions can affect plans.</p></div>
+              
+                <section class="spot-group">
+                  <div class="group-heading">
+                    <h3>Downtown Orientation</h3>
+                    <p>The city stops that help Reykjavik make sense quickly.</p>
+                  </div>
+                  <div class="spot-grid ">
+      <article class="spot">
+        <div class="spot-kicker">Reykjavik, Reykjanes, And Arrival Days / City</div>
+        <div class="spot-title-row">
+          <h4>Reykjavik</h4>
+          <div class="rating"><strong>7/10</strong><span>good</span></div>
+        </div>
+        <p class="what"><strong>What it is:</strong> Compact, walkable, and useful as both a soft landing and weather-proof cultural base.</p>
+        <p class="why"><strong>Why go:</strong> Use one day for the waterfront, Old Harbour/Grandi, Hallgrimskirkja, and a pool; keep the other flexible for weather.</p>
+        <div class="spot-meta"><strong>Time:</strong> 2 days is the sweet spot; add a third only for museums, pools, whale watching, or a slower start.</div>
+        <div class="images count-2"><figure><img src="web_images/reykjavik-01-journey-through-reykjavik-iceland-s-amazing-capital-city.jpg" alt="Reykjavik"></figure>
+<figure><img src="web_images/reykjavik-02-reykjavik-city-guide-the-very-best-things-to-do-in-reykjavik.jpg" alt="Reykjavik"></figure></div>
+        <div class="source-line">icelandreview.com, traveladdicts.net</div>
+      </article>
+    
+
+      <article class="spot fit-contain">
+        <div class="spot-kicker">Reykjavik, Reykjanes, And Arrival Days / Architecture</div>
+        <div class="spot-title-row">
+          <h4>Hallgrimskirkja</h4>
+          <div class="rating"><strong>7/10</strong><span>good</span></div>
+        </div>
+        <p class="what"><strong>What it is:</strong> The basalt-inspired church tower is the easiest way to orient yourself over the city grid and mountains.</p>
+        <p class="why"><strong>Why go:</strong> Go early or late for calmer light; the tower view helps make the rest of Reykjavik click.</p>
+        <div class="spot-meta"><strong>Time:</strong> 45-75 minutes including the tower.</div>
+        <div class="images count-3"><figure><img src="web_images/hallgrimskirkja-01-hallgrimskirkja-cathedral-a-highlight-of-reykjavik-iceland24.jpg" alt="Hallgrimskirkja"></figure>
+<figure><img src="web_images/hallgrimskirkja-02-hallgrimskirkja-planning-your-visit.jpg" alt="Hallgrimskirkja"></figure>
+<figure><img src="web_images/hallgrimskirkja-03-8-interesting-facts-about-hallgrimskirkja-in-reykjavik.jpg" alt="Hallgrimskirkja"></figure></div>
+        <div class="source-line">art-facts.com, iceland24blog.com, tripsavvy.com</div>
+      </article>
+    
+
+      <article class="spot fit-contain">
+        <div class="spot-kicker">Reykjavik, Reykjanes, And Arrival Days / Architecture</div>
+        <div class="spot-title-row">
+          <h4>Harpa Concert Hall</h4>
+          <div class="rating"><strong>6/10</strong><span>decent</span></div>
+        </div>
+        <p class="what"><strong>What it is:</strong> A glass waterfront landmark with crystalline geometry and strong weather-day value.</p>
+        <p class="why"><strong>Why go:</strong> Pair it with the Sun Voyager and Old Harbour walk; the facade photographs especially well in changing light.</p>
+        <div class="spot-meta"><strong>Time:</strong> 30-60 minutes unless you attend a show.</div>
+        <div class="images count-3"><figure><img src="web_images/harpa-01-harpa-reykjavik-s-concert-and-conference-hall-guide-to-iceland.jpg" alt="Harpa Concert Hall"></figure>
+<figure><img src="web_images/harpa-02-harpa-reykjavik-concert-hall-building-iceland-e-architect.jpg" alt="Harpa Concert Hall"></figure>
+<figure><img src="web_images/harpa-03-reykjavik-sightseeing-harpa-concert-hall-i-am-reykjavik.jpg" alt="Harpa Concert Hall"></figure></div>
+        <div class="source-line">e-architect.co.uk, guidetoiceland.is, iamreykjavik.com</div>
+      </article>
+    
+
+      <article class="spot">
+        <div class="spot-kicker">Reykjavik, Reykjanes, And Arrival Days / Neighborhood</div>
+        <div class="spot-title-row">
+          <h4>Old Harbour and Grandi</h4>
+          <div class="rating"><strong>6/10</strong><span>decent</span></div>
+        </div>
+        <p class="what"><strong>What it is:</strong> A harbour district for cafes, design shops, seafood, galleries, and whale-watching departures.</p>
+        <p class="why"><strong>Why go:</strong> Good first-evening zone if you want something atmospheric but low-effort after flying in.</p>
+        <div class="spot-meta"><strong>Time:</strong> Half day at an easy pace.</div>
+        <div class="images count-2"><figure><img src="web_images/old-harbour-grandi-01-explore-reykjavik-s-hip-grandi-harbour-district.jpg" alt="Old Harbour and Grandi"></figure>
+<figure><img src="web_images/old-harbour-grandi-02-old-harbour-house-reykjavik-menu-prices-restaurant-reviews.jpg" alt="Old Harbour and Grandi"></figure></div>
+        <div class="source-line">loveexploring.com, tripadvisor.com</div>
+      </article>
+    
+
+      <article class="spot">
+        <div class="spot-kicker">Reykjavik, Reykjanes, And Arrival Days / Street</div>
+        <div class="spot-title-row">
+          <h4>Laugavegur Street</h4>
+          <div class="rating"><strong>5/10</strong><span>okay</span></div>
+        </div>
+        <p class="what"><strong>What it is:</strong> Reykjavik&#x27;s main shopping and cafe street, separate from the highland trek of the same name.</p>
+        <p class="why"><strong>Why go:</strong> Useful for coffee, outdoor shops, dinner, and a practical city stroll rather than a major sightseeing block.</p>
+        <div class="spot-meta"><strong>Time:</strong> 1-2 hours while wandering downtown.</div>
+        <div class="images count-1"><figure><img src="web_images/laugavegur-reykjavik-01-laugavegur-shopping-reykjavik-s-premier-retail-haven.jpg" alt="Laugavegur Street"></figure></div>
+        <div class="source-line">tripjive.com</div>
+      </article>
+    
+
+      <article class="spot">
+        <div class="spot-kicker">Reykjavik, Reykjanes, And Arrival Days / City Nature</div>
+        <div class="spot-title-row">
+          <h4>Tjornin Pond</h4>
+          <div class="rating"><strong>4.5/10</strong><span>meh</span></div>
+        </div>
+        <p class="what"><strong>What it is:</strong> A quiet central pond framed by the city hall, old streets, and everyday Reykjavik life.</p>
+        <p class="why"><strong>Why go:</strong> Nice connector between downtown museums and the church area; not a destination to over-schedule.</p>
+        <div class="spot-meta"><strong>Time:</strong> 20-45 minutes.</div>
+        <div class="images count-1"><figure><img src="web_images/tjornin-01-tjornin-pond-in-reykjavik-reykjavik-area-iceland-travel.jpg" alt="Tjornin Pond"></figure></div>
+        <div class="source-line">icelandtravel.is</div>
+      </article>
+    </div>
+                </section>
+                
+                <section class="spot-group">
+                  <div class="group-heading">
+                    <h3>Weather-Proof Culture</h3>
+                    <p>Useful when wind or rain makes the road less appealing.</p>
+                  </div>
+                  <div class="spot-grid ">
+      <article class="spot fit-contain">
+        <div class="spot-kicker">Reykjavik, Reykjanes, And Arrival Days / Museum</div>
+        <div class="spot-title-row">
+          <h4>Perlan</h4>
+          <div class="rating"><strong>6.5/10</strong><span>decent</span></div>
+        </div>
+        <p class="what"><strong>What it is:</strong> A weather-proof geology and nature museum with an observation deck and Iceland overview exhibits.</p>
+        <p class="why"><strong>Why go:</strong> Best as a rain-day primer before the road: glaciers, volcanoes, aurora, and a city-view deck in one stop.</p>
+        <div class="spot-meta"><strong>Time:</strong> 2-3 hours.</div>
+        <div class="images count-2"><figure><img src="web_images/perlan-01-perlan-museum-a-journey-through-icelandic-nature-brad-s-backpack.jpg" alt="Perlan"></figure>
+<figure><img src="web_images/perlan-02-is-perlan-museum-in-reykjavik-worth-visiting-plan-pack-explore.jpg" alt="Perlan"></figure></div>
+        <div class="source-line">bradsbackpack.com, planpackexplore.com</div>
+      </article>
+    
+
+      <article class="spot">
+        <div class="spot-kicker">Reykjavik, Reykjanes, And Arrival Days / Museum</div>
+        <div class="spot-title-row">
+          <h4>The Settlement Exhibition</h4>
+          <div class="rating"><strong>5.5/10</strong><span>okay</span></div>
+        </div>
+        <p class="what"><strong>What it is:</strong> A compact archaeology museum built around a Viking-age longhouse site in central Reykjavik.</p>
+        <p class="why"><strong>Why go:</strong> Good if you want history without losing a whole day indoors.</p>
+        <div class="spot-meta"><strong>Time:</strong> 60-90 minutes.</div>
+        <div class="images count-1"><figure><img src="web_images/settlement-exhibition-01-the-settlement-exhibition-iceland-the-beautiful.jpg" alt="The Settlement Exhibition"></figure></div>
+        <div class="source-line">icelandthebeautiful.com</div>
+      </article>
+    
+
+      <article class="spot">
+        <div class="spot-kicker">Reykjavik, Reykjanes, And Arrival Days / Museum</div>
+        <div class="spot-title-row">
+          <h4>National Museum of Iceland</h4>
+          <div class="rating"><strong>6/10</strong><span>decent</span></div>
+        </div>
+        <p class="what"><strong>What it is:</strong> The most straightforward museum for understanding Icelandic history before leaving the capital.</p>
+        <p class="why"><strong>Why go:</strong> Choose this over smaller museums if you only want one serious cultural stop.</p>
+        <div class="spot-meta"><strong>Time:</strong> 1.5-2.5 hours.</div>
+        <div class="images count-1"><figure><img src="web_images/national-museum-01-48-hours-in-reykjavik-things-to-do-g-adventures.jpg" alt="National Museum of Iceland"></figure></div>
+        <div class="source-line">gadventures.com</div>
+      </article>
+    </div>
+                </section>
+                
+                <section class="spot-group">
+                  <div class="group-heading">
+                    <h3>Bathing And Reykjanes</h3>
+                    <p>Choose one or two rather than stacking every pool and lava-field stop.</p>
+                  </div>
+                  <div class="spot-grid ">
+      <article class="spot">
+        <div class="spot-kicker">Reykjavik, Reykjanes, And Arrival Days / Local Bath</div>
+        <div class="spot-title-row">
+          <h4>Nautholsvik Geothermal Beach</h4>
+          <div class="rating"><strong>5/10</strong><span>okay</span></div>
+        </div>
+        <p class="what"><strong>What it is:</strong> A local geothermal beach and hot-pot area that shows Reykjavik&#x27;s everyday bathing culture.</p>
+        <p class="why"><strong>Why go:</strong> More local-feeling than luxury spas; check opening hours and bring a towel.</p>
+        <div class="spot-meta"><strong>Time:</strong> 1-2 hours.</div>
+        <div class="images count-2"><figure><img src="web_images/nautholsvik-01-beach-and-geothermal-swimming-pool-of-license-image-70478053.jpg" alt="Nautholsvik Geothermal Beach"></figure>
+<figure><img src="web_images/nautholsvik-02-nautholsvik-geothermal-beach-reykjavik-iceland-located-along-the.jpg" alt="Nautholsvik Geothermal Beach"></figure></div>
+        <div class="source-line">lookphotos.com, pinterest.co.uk</div>
+      </article>
+    
+
+      <article class="spot">
+        <div class="spot-kicker">Reykjavik, Reykjanes, And Arrival Days / Geothermal Bath</div>
+        <div class="spot-title-row">
+          <h4>Sky Lagoon</h4>
+          <div class="rating"><strong>7/10</strong><span>good</span></div>
+        </div>
+        <p class="what"><strong>What it is:</strong> A polished ocean-view geothermal spa near downtown, easier to fit than the Blue Lagoon.</p>
+        <p class="why"><strong>Why go:</strong> Book ahead and use it as a decompression ritual rather than a sightseeing replacement.</p>
+        <div class="spot-meta"><strong>Time:</strong> 2-3 hours.</div>
+        <div class="images count-2"><figure><img src="web_images/sky-lagoon-01-sky-lagoon-iceland-s-geothermal-lagoon-with-ocean-views-luxsphere.jpg" alt="Sky Lagoon"></figure>
+<figure><img src="web_images/sky-lagoon-02-how-to-visit-iceland-s-sky-lagoon.jpg" alt="Sky Lagoon"></figure></div>
+        <div class="source-line">luxsphere.co, matadornetwork.com</div>
+      </article>
+    
+
+      <article class="spot">
+        <div class="spot-kicker">Reykjavik, Reykjanes, And Arrival Days / Geothermal Bath</div>
+        <div class="spot-title-row">
+          <h4>Blue Lagoon</h4>
+          <div class="rating"><strong>6.5/10</strong><span>decent</span></div>
+        </div>
+        <p class="what"><strong>What it is:</strong> The famous milky-blue spa near Keflavik and the Reykjanes lava fields.</p>
+        <p class="why"><strong>Why go:</strong> Keep it flexible in 2026 and check current Reykjanes safety updates before locking it in.</p>
+        <div class="spot-meta"><strong>Time:</strong> 2-4 hours, often easiest near arrival or departure.</div>
+        <div class="images count-2"><figure><img src="web_images/blue-lagoon-01-blue-lagoon-geothermal-bath-iceland-kerstin-sherie-embrace-life.jpg" alt="Blue Lagoon"></figure>
+<figure><img src="web_images/blue-lagoon-02-geothermal-blue-lagoon-geothermal-spa-iceland.jpg" alt="Blue Lagoon"></figure></div>
+        <div class="source-line">geothermalzeikai.blogspot.com, kerstinsherie.com</div>
+      </article>
+    
+
+      <article class="spot">
+        <div class="spot-kicker">Reykjavik, Reykjanes, And Arrival Days / Region</div>
+        <div class="spot-title-row">
+          <h4>Reykjanes Peninsula</h4>
+          <div class="rating"><strong>6.5/10</strong><span>decent</span></div>
+        </div>
+        <p class="what"><strong>What it is:</strong> Lava fields, geothermal zones, lighthouses, fissures, and airport-adjacent half-day possibilities.</p>
+        <p class="why"><strong>Why go:</strong> Worth keeping flexible because volcanic and geothermal conditions can shift; check official updates close to the trip.</p>
+        <div class="spot-meta"><strong>Time:</strong> Half day to full day.</div>
+        <div class="images count-2"><figure><img src="web_images/reykjanes-peninsula-01-things-to-do-and-see-on-the-reykjanes-peninsula-icelandair-us.jpg" alt="Reykjanes Peninsula"></figure>
+<figure><img src="web_images/reykjanes-peninsula-02-iceland-s-most-underrated-area-the-beautiful-reykjanes-peninsula.jpg" alt="Reykjanes Peninsula"></figure></div>
+        <div class="source-line">allthingsiceland.com, icelandair.com</div>
+      </article>
+    
+
+      <article class="spot">
+        <div class="spot-kicker">Reykjavik, Reykjanes, And Arrival Days / Geology Stop</div>
+        <div class="spot-title-row">
+          <h4>Bridge Between Continents</h4>
+          <div class="rating"><strong>4/10</strong><span>meh</span></div>
+        </div>
+        <p class="what"><strong>What it is:</strong> A symbolic footbridge over a fissure between the North American and Eurasian plates.</p>
+        <p class="why"><strong>Why go:</strong> Best as a quick Reykjanes add-on, not as a standalone destination.</p>
+        <div class="spot-meta"><strong>Time:</strong> 15-30 minutes.</div>
+        <div class="images count-1"><figure><img src="web_images/bridge-between-continents-01-the-bridge-between-continents-iceland-travel-guide.jpg" alt="Bridge Between Continents"></figure></div>
+        <div class="source-line">icelandtravelguide.is</div>
+      </article>
+    
+
+      <article class="spot">
+        <div class="spot-kicker">Reykjavik, Reykjanes, And Arrival Days / Geothermal Area</div>
+        <div class="spot-title-row">
+          <h4>Krysuvik and Seltun</h4>
+          <div class="rating"><strong>6.5/10</strong><span>decent</span></div>
+        </div>
+        <p class="what"><strong>What it is:</strong> A colorful geothermal field of steaming vents, mineral slopes, and boardwalk viewpoints.</p>
+        <p class="why"><strong>Why go:</strong> Stay on marked paths; geothermal crust can be fragile and dangerous.</p>
+        <div class="spot-meta"><strong>Time:</strong> 45-75 minutes.</div>
+        <div class="images count-2"><figure><img src="web_images/krysuvik-seltun-01-seltun-geothermal-area-krysuvik-reykjanes-peninsula-in-58-off.jpg" alt="Krysuvik and Seltun"></figure>
+<figure><img src="web_images/krysuvik-seltun-02-seltun-the-colourful-geothermal-area-at-krysuvik-on-the-reykjanes.jpg" alt="Krysuvik and Seltun"></figure></div>
+        <div class="source-line">guidetoiceland.is, micoope.com.gt</div>
+      </article>
+    
+
+      <article class="spot fit-contain">
+        <div class="spot-kicker">Reykjavik, Reykjanes, And Arrival Days / Coast</div>
+        <div class="spot-title-row">
+          <h4>Reykjanesviti Lighthouse</h4>
+          <div class="rating"><strong>5.5/10</strong><span>okay</span></div>
+        </div>
+        <p class="what"><strong>What it is:</strong> A lighthouse and coastal landscape at Iceland&#x27;s southwestern edge.</p>
+        <p class="why"><strong>Why go:</strong> Good paired with Gunnuhver, cliffs, and other Reykjanes stops.</p>
+        <div class="spot-meta"><strong>Time:</strong> 30-60 minutes.</div>
+        <div class="images count-1"><figure><img src="web_images/reykjanesviti-01-the-reykjavegur-trail.jpg" alt="Reykjanesviti Lighthouse"></figure></div>
+        <div class="source-line">trailheadcentral.com</div>
+      </article>
+    </div>
+                </section>
+                
+            </section>
+            
+            <section class="chapter accent-amber">
+              <p class="eyebrow">Core spine</p>
+              <h2>Golden Circle</h2>
+              <p class="subtitle">A focused orientation loop: geology, history, geothermal drama, and one big waterfall.</p>
+              <div class="chapter-copy"><p>The Golden Circle is worth doing, but it is best treated as a full day with good pacing. The main trio is Thingvellir, Geysir/Strokkur, and Gullfoss. The difference between a rushed day and a satisfying one is usually how much time you give Thingvellir.</p><p>If you add extras, pick based on mood: Kerid for color, Laugarvatn Fontana or Secret Lagoon for a soak, Fridheimar for a greenhouse lunch, and Skalholt for a quieter historical layer.</p><p>This section can also work as a transition toward the South Coast. It does not need two or three days unless you intentionally slow down with an overnight and bathing stop.</p></div>
+              
+                <section class="spot-group">
+                  <div class="group-heading">
+                    <h3>The Classic Trio</h3>
+                    <p>The three stops that justify the loop.</p>
+                  </div>
+                  <div class="spot-grid ">
+      <article class="spot">
+        <div class="spot-kicker">Golden Circle / National Park</div>
+        <div class="spot-title-row">
+          <h4>Thingvellir National Park</h4>
+          <div class="rating"><strong>8/10</strong><span>very good</span></div>
+        </div>
+        <p class="what"><strong>What it is:</strong> A rift-valley national park where geology, short walks, and Icelandic political history overlap.</p>
+        <p class="why"><strong>Why go:</strong> This is the Golden Circle stop that rewards slowing down; do Oxararfoss and the Almannagja walk.</p>
+        <div class="spot-meta"><strong>Time:</strong> 1.5-3 hours on a one-day loop; longer if hiking.</div>
+        <div class="images count-3"><figure><img src="web_images/thingvellir-01-ultimate-guide-to-thingvellir-national-park-in-iceland.jpg" alt="Thingvellir National Park"></figure>
+<figure><img src="web_images/thingvellir-02-discover-iceland-s-thingvellir-national-park.jpg" alt="Thingvellir National Park"></figure>
+<figure><img src="web_images/thingvellir-03-thingvellir-national-park.jpg" alt="Thingvellir National Park"></figure></div>
+        <div class="source-line">peakvisor.com, reykjavikcars.com, traveltoiceland.com</div>
+      </article>
+    
+
+      <article class="spot">
+        <div class="spot-kicker">Golden Circle / Waterfall</div>
+        <div class="spot-title-row">
+          <h4>Oxararfoss</h4>
+          <div class="rating"><strong>6/10</strong><span>decent</span></div>
+        </div>
+        <p class="what"><strong>What it is:</strong> A short-walk waterfall tucked inside the Thingvellir rift landscape.</p>
+        <p class="why"><strong>Why go:</strong> Do it as part of your Thingvellir walk instead of treating it as a separate drive-stop.</p>
+        <div class="spot-meta"><strong>Time:</strong> 30-60 minutes from the main parking areas.</div>
+        <div class="images count-2"><figure><img src="web_images/oxararfoss-01-complete-guide-to-iceland-s-oxararfoss-waterfall.jpg" alt="Oxararfoss"></figure>
+<figure><img src="web_images/oxararfoss-02-oxararfoss-waterfall-iceland-photograph-by-ivan-batinic-fine-art-america.jpg" alt="Oxararfoss"></figure></div>
+        <div class="source-line">fineartamerica.com, icelandcars.is</div>
+      </article>
+    
+
+      <article class="spot">
+        <div class="spot-kicker">Golden Circle / Gorge</div>
+        <div class="spot-title-row">
+          <h4>Almannagja Gorge</h4>
+          <div class="rating"><strong>7/10</strong><span>good</span></div>
+        </div>
+        <p class="what"><strong>What it is:</strong> The dramatic fault wall and assembly-site approach that gives Thingvellir much of its power.</p>
+        <p class="why"><strong>Why go:</strong> Walk it rather than only viewing from above; the scale lands better on foot.</p>
+        <div class="spot-meta"><strong>Time:</strong> 30-90 minutes depending on route.</div>
+        <div class="images count-2"><figure><img src="web_images/almannagja-01-almannagja-gorge-a-glimpse-into-iceland-s-geological-history.jpg" alt="Almannagja Gorge"></figure>
+<figure><img src="web_images/almannagja-02-your-ultimate-guide-to-almannagja-gorge.jpg" alt="Almannagja Gorge"></figure></div>
+        <div class="source-line">campervaniceland.com, reykjavikcars.com</div>
+      </article>
+    
+
+      <article class="spot">
+        <div class="spot-kicker">Golden Circle / Geothermal Area</div>
+        <div class="spot-title-row">
+          <h4>Geysir and Strokkur</h4>
+          <div class="rating"><strong>7.5/10</strong><span>good</span></div>
+        </div>
+        <p class="what"><strong>What it is:</strong> The geothermal field where Strokkur reliably erupts every few minutes while Geysir mostly rests.</p>
+        <p class="why"><strong>Why go:</strong> Wait through several eruptions; the first one always feels like a warm-up.</p>
+        <div class="spot-meta"><strong>Time:</strong> 45-75 minutes.</div>
+        <div class="images count-3"><figure><img src="web_images/geysir-strokkur-01-geysir-and-strokkur-iceland-s-incredible-geothermal-area-ocean-info.jpg" alt="Geysir and Strokkur"></figure>
+<figure><img src="web_images/geysir-strokkur-02-strokkur-geysir-geothermal-area-empnefsys-travel.jpg" alt="Geysir and Strokkur"></figure>
+<figure><img src="web_images/geysir-strokkur-03-geysir-is-a-famous-hot-spring-located-in-the-geothermal-area-in-haukadalur.jpg" alt="Geysir and Strokkur"></figure></div>
+        <div class="source-line">empnefsysandtravel.com, funiceland.is, oceaninfo.com</div>
+      </article>
+    
+
+      <article class="spot">
+        <div class="spot-kicker">Golden Circle / Waterfall</div>
+        <div class="spot-title-row">
+          <h4>Gullfoss</h4>
+          <div class="rating"><strong>8/10</strong><span>very good</span></div>
+        </div>
+        <p class="what"><strong>What it is:</strong> A huge two-tier waterfall and the most thunderous stop on the classic Golden Circle.</p>
+        <p class="why"><strong>Why go:</strong> Use both upper and lower viewpoints if weather allows; waterproof layers help near the spray.</p>
+        <div class="spot-meta"><strong>Time:</strong> 45-90 minutes.</div>
+        <div class="images count-3"><figure><img src="web_images/gullfoss-01-gullfoss-waterfall-in-iceland-alexios-ntounas-photography.jpg" alt="Gullfoss"></figure>
+<figure><img src="web_images/gullfoss-02-gullfoss-waterfall-iceland-s-mighty-golden-falls-i-am-reykjavik.jpg" alt="Gullfoss"></figure>
+<figure><img src="web_images/gullfoss-03-a-guide-to-gullfoss-iceland-s-most-iconic-waterfall.jpg" alt="Gullfoss"></figure></div>
+        <div class="source-line">campingiceland.com, icelandreview.com, ntounas.gr</div>
+      </article>
+    </div>
+                </section>
+                
+                <section class="spot-group">
+                  <div class="group-heading">
+                    <h3>High-Value Add-Ons</h3>
+                    <p>Good extras if the day has room or you want a slower countryside rhythm.</p>
+                  </div>
+                  <div class="spot-grid ">
+      <article class="spot">
+        <div class="spot-kicker">Golden Circle / Crater Lake</div>
+        <div class="spot-title-row">
+          <h4>Kerid Crater</h4>
+          <div class="rating"><strong>6/10</strong><span>decent</span></div>
+        </div>
+        <p class="what"><strong>What it is:</strong> A vivid volcanic crater lake that adds color and shape to a Golden Circle day.</p>
+        <p class="why"><strong>Why go:</strong> Best as a paid add-on if the sky is clear enough for the red slopes and blue water to pop.</p>
+        <div class="spot-meta"><strong>Time:</strong> 30-60 minutes.</div>
+        <div class="images count-1"><figure><img src="web_images/kerid-01-kerid-crater-lake-iceland-picture-of-the-day.jpg" alt="Kerid Crater"></figure></div>
+        <div class="source-line">picture-of-day.com</div>
+      </article>
+    
+
+      <article class="spot">
+        <div class="spot-kicker">Golden Circle / Geothermal Bath</div>
+        <div class="spot-title-row">
+          <h4>Laugarvatn Fontana</h4>
+          <div class="rating"><strong>6/10</strong><span>decent</span></div>
+        </div>
+        <p class="what"><strong>What it is:</strong> A lakefront geothermal bath stop that turns the Golden Circle from a drive loop into a softer day.</p>
+        <p class="why"><strong>Why go:</strong> Use it if you want your Golden Circle day to feel less like checkpoint tourism.</p>
+        <div class="spot-meta"><strong>Time:</strong> 1.5-2.5 hours.</div>
+        <div class="images count-2"><figure><img src="web_images/laugarvatn-fontana-01-laugarvatn-fontana-admission-to-the-geothermal-baths-iceland-travel.jpg" alt="Laugarvatn Fontana"></figure>
+<figure><img src="web_images/laugarvatn-fontana-02-laugarvatn-fontana-geothermal-baths-updated-november-2022-top-tips.jpg" alt="Laugarvatn Fontana"></figure></div>
+        <div class="source-line">icelandtravelguide.is, tripadvisor.ie</div>
+      </article>
+    
+
+      <article class="spot">
+        <div class="spot-kicker">Golden Circle / Geothermal Bath</div>
+        <div class="spot-title-row">
+          <h4>Secret Lagoon</h4>
+          <div class="rating"><strong>6.5/10</strong><span>decent</span></div>
+        </div>
+        <p class="what"><strong>What it is:</strong> A simpler, older-feeling geothermal pool near Fludir that pairs naturally with the Golden Circle.</p>
+        <p class="why"><strong>Why go:</strong> A good lower-key alternative if you want bathing to feel less like a production.</p>
+        <div class="spot-meta"><strong>Time:</strong> 1.5-2 hours.</div>
+        <div class="images count-2"><figure><img src="web_images/secret-lagoon-01-secret-lagoon-iceland-hot-springs-thermal-pool-arctic-adventures.jpg" alt="Secret Lagoon"></figure>
+<figure><img src="web_images/secret-lagoon-02-the-secret-lagoon-secrets-of-the-golden-circle-buubble.jpg" alt="Secret Lagoon"></figure></div>
+        <div class="source-line">adventures.is, buubble.com</div>
+      </article>
+    
+
+      <article class="spot">
+        <div class="spot-kicker">Golden Circle / Food Stop</div>
+        <div class="spot-title-row">
+          <h4>Fridheimar Tomato Farm</h4>
+          <div class="rating"><strong>6/10</strong><span>decent</span></div>
+        </div>
+        <p class="what"><strong>What it is:</strong> A greenhouse lunch stop famous for tomatoes, soup, and an only-in-Iceland growing setup.</p>
+        <p class="why"><strong>Why go:</strong> Reserve if it matters to you; it is popular for good reason.</p>
+        <div class="spot-meta"><strong>Time:</strong> 60-90 minutes with lunch.</div>
+        <div class="images count-1"><figure><img src="web_images/fridheimar-01-fridheimar-tomato-farm-dining-among-the-tomato-plants-in-a-greenhouse.jpg" alt="Fridheimar Tomato Farm"></figure></div>
+        <div class="source-line">apronandsneakers.com</div>
+      </article>
+    
+
+      <article class="spot">
+        <div class="spot-kicker">Golden Circle / Historic Site</div>
+        <div class="spot-title-row">
+          <h4>Skalholt</h4>
+          <div class="rating"><strong>4.5/10</strong><span>meh</span></div>
+        </div>
+        <p class="what"><strong>What it is:</strong> A historic church and cultural site that adds a quieter layer to the Golden Circle.</p>
+        <p class="why"><strong>Why go:</strong> Worth adding if you like history; skippable if your day is already full.</p>
+        <div class="spot-meta"><strong>Time:</strong> 30-60 minutes.</div>
+        <div class="images count-1"><figure><img src="web_images/skalholt-01-skalholt-historical-site-travel-reykjavik.jpg" alt="Skalholt"></figure></div>
+        <div class="source-line">travelreykjavik.com</div>
+      </article>
+    </div>
+                </section>
+                
+            </section>
+            
+            <section class="chapter accent-green">
+              <p class="eyebrow">Core spine</p>
+              <h2>South Coast And Southeast</h2>
+              <p class="subtitle">The most visually rewarding road-trip segment for a first Iceland visit.</p>
+              <div class="chapter-copy"><p>This is where the trip starts to feel huge. Waterfalls drop from old sea cliffs, black beaches make the coastline feel elemental, glaciers begin to appear, and the road keeps giving you reasons to stop.</p><p>If you only reach Vik, two days can work. If you continue to Skaftafell, Jokulsarlon, Diamond Beach, or Hofn, give the route three to five days. Otherwise you will spend too much of the trip driving past the things you came to see.</p><p>The south rewards early starts, waterproof layers, and humility around the ocean. Reynisfjara in particular is beautiful, but sneaker-wave safety is non-negotiable.</p></div>
+              
+                <section class="spot-group">
+                  <div class="group-heading">
+                    <h3>Waterfall Run</h3>
+                    <p>A compact cluster of waterfalls where short detours pay off.</p>
+                  </div>
+                  <div class="spot-grid ">
+      <article class="spot">
+        <div class="spot-kicker">South Coast And Southeast / Waterfall</div>
+        <div class="spot-title-row">
+          <h4>Seljalandsfoss</h4>
+          <div class="rating"><strong>8.5/10</strong><span>very good</span></div>
+        </div>
+        <p class="what"><strong>What it is:</strong> The walk-behind waterfall that announces the South Coast in full drama.</p>
+        <p class="why"><strong>Why go:</strong> Wear waterproof layers and protect your camera; the path can be slick.</p>
+        <div class="spot-meta"><strong>Time:</strong> 45-75 minutes including the rear path.</div>
+        <div class="images count-3"><figure><img src="web_images/seljalandsfoss-01-aerial-panoramic-view-of-seljalandsfoss-waterfall-at-sunset-iceland.jpg" alt="Seljalandsfoss"></figure>
+<figure><img src="web_images/seljalandsfoss-02-iceland-s-seljalandsfoss-waterfall-the-gem-of-the-south.jpg" alt="Seljalandsfoss"></figure>
+<figure><img src="web_images/seljalandsfoss-03-tips-for-seljalandsfoss-iceland-the-waterfall-you-can-walk-behind.jpg" alt="Seljalandsfoss"></figure></div>
+        <div class="source-line">iceland24blog.com, icelandtrippers.com, matteocolombo.com</div>
+      </article>
+    
+
+      <article class="spot">
+        <div class="spot-kicker">South Coast And Southeast / Hidden Waterfall</div>
+        <div class="spot-title-row">
+          <h4>Gljufrabui</h4>
+          <div class="rating"><strong>8/10</strong><span>very good</span></div>
+        </div>
+        <p class="what"><strong>What it is:</strong> A partially hidden waterfall inside a narrow cleft near Seljalandsfoss.</p>
+        <p class="why"><strong>Why go:</strong> Expect wet shoes if entering the cleft; it is one of the easiest high-value add-ons.</p>
+        <div class="spot-meta"><strong>Time:</strong> 20-40 minutes after Seljalandsfoss.</div>
+        <div class="images count-3"><figure><img src="web_images/gljufrabui-01-the-hidden-waterfall-gljufrabui.jpg" alt="Gljufrabui"></figure>
+<figure><img src="web_images/gljufrabui-02-gljufrabui-waterfall-hidden-waterfall.jpg" alt="Gljufrabui"></figure>
+<figure><img src="web_images/gljufrabui-03-gljufrabui-waterfall-wade-through-the-canyon-to-explore-the-hidden-gem.jpg" alt="Gljufrabui"></figure></div>
+        <div class="source-line">app.advcollective.com, icelandtravelguide.is</div>
+      </article>
+    
+
+      <article class="spot">
+        <div class="spot-kicker">South Coast And Southeast / Waterfall</div>
+        <div class="spot-title-row">
+          <h4>Skogafoss</h4>
+          <div class="rating"><strong>9/10</strong><span>great</span></div>
+        </div>
+        <p class="what"><strong>What it is:</strong> A broad, powerful curtain waterfall with stairs to a high viewpoint and trail access beyond.</p>
+        <p class="why"><strong>Why go:</strong> Climb the stairs if visibility is decent; it changes the scale of the place.</p>
+        <div class="spot-meta"><strong>Time:</strong> 45-90 minutes, longer if starting the Waterfall Way.</div>
+        <div class="images count-3"><figure><img src="web_images/skogafoss-01-skogafoss-waterfall-travel-guide-arctic-adventures.jpg" alt="Skogafoss"></figure>
+<figure><img src="web_images/skogafoss-02-skogafoss-waterfalls-below-the-eyjafjoll-mountains-and-west-of.jpg" alt="Skogafoss"></figure>
+<figure><img src="web_images/skogafoss-03-iceland-s-skogafoss-waterfall-the-complete-guide.jpg" alt="Skogafoss"></figure></div>
+        <div class="source-line">adventures.is, funiceland.is, tripsavvy.com</div>
+      </article>
+    
+
+      <article class="spot">
+        <div class="spot-kicker">South Coast And Southeast / Waterfall</div>
+        <div class="spot-title-row">
+          <h4>Kvernufoss</h4>
+          <div class="rating"><strong>7.5/10</strong><span>good</span></div>
+        </div>
+        <p class="what"><strong>What it is:</strong> A quieter canyon waterfall near Skogafoss, often one of the best crowd-to-beauty trades.</p>
+        <p class="why"><strong>Why go:</strong> Great when Skogafoss feels busy; stay respectful of paths and local access.</p>
+        <div class="spot-meta"><strong>Time:</strong> 45-75 minutes.</div>
+        <div class="images count-2"><figure><img src="web_images/kvernufoss-01-kvernufoss-waterfall-hidden-gem-of-iceland-iceland-travel-guide.jpg" alt="Kvernufoss"></figure>
+<figure><img src="web_images/kvernufoss-02-tips-for-visiting-kvernufoss-waterfall-iceland.jpg" alt="Kvernufoss"></figure></div>
+        <div class="source-line">adventurouskate.com, icelandtravelguide.is</div>
+      </article>
+    </div>
+                </section>
+                
+                <section class="spot-group">
+                  <div class="group-heading">
+                    <h3>Vik And The Black Coast</h3>
+                    <p>Basalt, black sand, cliffs, and the most serious beach safety stop of the trip.</p>
+                  </div>
+                  <div class="spot-grid ">
+      <article class="spot featured">
+        <div class="spot-kicker">South Coast And Southeast / Black Sand Beach</div>
+        <div class="spot-title-row">
+          <h4>Reynisfjara Black Sand Beach</h4>
+          <div class="rating"><strong>8.5/10</strong><span>very good</span></div>
+        </div>
+        <p class="what"><strong>What it is:</strong> Basalt columns, black sand, sea stacks, and real ocean danger in one iconic stop.</p>
+        <p class="why"><strong>Why go:</strong> The beach is spectacular and genuinely dangerous. Keep distance from the surf and do not turn your back on the ocean.</p>
+        <div class="spot-meta"><strong>Time:</strong> 45-90 minutes.</div>
+        <div class="images count-5"><figure><img src="web_images/reynisfjara-01-reynisfjara-discover-iceland-s-black-sand-beach.jpg" alt="Reynisfjara Black Sand Beach"></figure>
+<figure><img src="web_images/reynisfjara-02-reynisfjara-black-sand-beach-in-iceland-top-tips-for-visiting.jpg" alt="Reynisfjara Black Sand Beach"></figure>
+<figure><img src="web_images/reynisfjara-03-the-20-best-black-sand-beaches-to-visit.jpg" alt="Reynisfjara Black Sand Beach"></figure>
+<figure><img src="web_images/reynisfjara-04-mybestplace-reynisfjara-iceland-s-black-sand-beach.jpg" alt="Reynisfjara Black Sand Beach"></figure>
+<figure><img src="web_images/reynisfjara-05-discover-reynisfjara-iceland-s-iconic-black-sand-beach-hikerwise.jpg" alt="Reynisfjara Black Sand Beach"></figure></div>
+        <div class="source-line">fodors.com, hikerwise.com, icelandcars.is, mybestplace.com, theworldpursuit.com</div>
+      </article>
+    
+
+      <article class="spot">
+        <div class="spot-kicker">South Coast And Southeast / Viewpoint</div>
+        <div class="spot-title-row">
+          <h4>Dyrholaey</h4>
+          <div class="rating"><strong>8/10</strong><span>very good</span></div>
+        </div>
+        <p class="what"><strong>What it is:</strong> A headland above Vik with arches, lighthouse views, cliffs, and long black-sand panoramas.</p>
+        <p class="why"><strong>Why go:</strong> Good for context after Reynisfjara; wind can be serious on the exposed top.</p>
+        <div class="spot-meta"><strong>Time:</strong> 45-90 minutes.</div>
+        <div class="images count-3"><figure><img src="web_images/dyrholaey-01-aerial-view-of-dyrholaey-by-iurie-belegurschi-500px.jpg" alt="Dyrholaey"></figure>
+<figure><img src="web_images/dyrholaey-02-dyrholaey-iceland-travel-guide.jpg" alt="Dyrholaey"></figure>
+<figure><img src="web_images/dyrholaey-03-dyrholaey-peninsula-is-the-southernmost-part-of-iceland-not-far-from.jpg" alt="Dyrholaey"></figure></div>
+        <div class="source-line">500px.com, funiceland.is, icelandtravelguide.is</div>
+      </article>
+    
+
+      <article class="spot">
+        <div class="spot-kicker">South Coast And Southeast / Town</div>
+        <div class="spot-title-row">
+          <h4>Vik i Myrdal</h4>
+          <div class="rating"><strong>5.5/10</strong><span>okay</span></div>
+        </div>
+        <p class="what"><strong>What it is:</strong> The South Coast&#x27;s key overnight base near Reynisfjara, Dyrholaey, and the black-sand coastline.</p>
+        <p class="why"><strong>Why go:</strong> A practical place to slow the trip down instead of forcing a marathon drive to Jokulsarlon.</p>
+        <div class="spot-meta"><strong>Time:</strong> Overnight or lunch stop.</div>
+        <div class="images count-1"><figure><img src="web_images/vik-01-vik-i-myrdal-your-day-tours.jpg" alt="Vik i Myrdal"></figure></div>
+        <div class="source-line">yourdaytours.is</div>
+      </article>
+    
+
+      <article class="spot">
+        <div class="spot-kicker">South Coast And Southeast / Canyon</div>
+        <div class="spot-title-row">
+          <h4>Fjadrargljufur Canyon</h4>
+          <div class="rating"><strong>8/10</strong><span>very good</span></div>
+        </div>
+        <p class="what"><strong>What it is:</strong> A serpentine mossy canyon with short viewpoints that photograph like a fantasy landscape.</p>
+        <p class="why"><strong>Why go:</strong> Stay on open marked paths; closures happen when fragile vegetation needs recovery.</p>
+        <div class="spot-meta"><strong>Time:</strong> 45-90 minutes.</div>
+        <div class="images count-3"><figure><img src="web_images/fjadrargljufur-01-fjadrargljufur-canyon-iceland.jpg" alt="Fjadrargljufur Canyon"></figure>
+<figure><img src="web_images/fjadrargljufur-02-fjadrargljufur-is-a-canyon-located-close-to-the-town.jpg" alt="Fjadrargljufur Canyon"></figure>
+<figure><img src="web_images/fjadrargljufur-03-fjadrargljufur-canyon-in-iceland-a-complete-guide-2026.jpg" alt="Fjadrargljufur Canyon"></figure></div>
+        <div class="source-line">backpackersintheworld.com, birdseyeviewphotography.com.au, funiceland.is</div>
+      </article>
+    </div>
+                </section>
+                
+                <section class="spot-group">
+                  <div class="group-heading">
+                    <h3>Skaftafell And Glacier Country</h3>
+                    <p>This is a hiking base, not just a roadside pause.</p>
+                  </div>
+                  <div class="spot-grid ">
+      <article class="spot featured">
+        <div class="spot-kicker">South Coast And Southeast / Hiking Base</div>
+        <div class="spot-title-row">
+          <h4>Skaftafell</h4>
+          <div class="rating"><strong>8.5/10</strong><span>very good</span></div>
+        </div>
+        <p class="what"><strong>What it is:</strong> A Vatnajokull National Park hub for glacier views, glacier hikes, and stronger half-day trails.</p>
+        <p class="why"><strong>Why go:</strong> This deserves more than a car-park stop; combine Svartifoss with Sjonarnipa if weather cooperates.</p>
+        <div class="spot-meta"><strong>Time:</strong> Half day to full day.</div>
+        <div class="images count-5"><figure><img src="web_images/skaftafell-01-hiking-in-skaftafell-nature-reserve-your-ultimate-guide-from-fosshotel.jpg" alt="Skaftafell"></figure>
+<figure><img src="web_images/skaftafell-02-skaftafell-visit-vatnajokull-skaftafell-national-park.jpg" alt="Skaftafell"></figure>
+<figure><img src="web_images/skaftafell-03-skaftafell-national-park-guide-glacier-hikes-svartifoss-troll-is.jpg" alt="Skaftafell"></figure>
+<figure><img src="web_images/skaftafell-04-hiking-kristinartindar-mountain-skaftafell-national-park-iceland.jpg" alt="Skaftafell"></figure>
+<figure><img src="web_images/skaftafell-05-skaftafell-blue-ice-cave-glacier-hike-skaftafell-kimkim.jpg" alt="Skaftafell"></figure></div>
+        <div class="source-line">fosshotelglacierlagoon.com, kimkim.com, myoutdoorbasecamp.com, troll.is, visitvatnajokull.is</div>
+      </article>
+    
+
+      <article class="spot">
+        <div class="spot-kicker">South Coast And Southeast / Waterfall Hike</div>
+        <div class="spot-title-row">
+          <h4>Svartifoss</h4>
+          <div class="rating"><strong>8/10</strong><span>very good</span></div>
+        </div>
+        <p class="what"><strong>What it is:</strong> A basalt-column waterfall reached by one of Skaftafell&#x27;s classic short hikes.</p>
+        <p class="why"><strong>Why go:</strong> Best paired with Sjonarnipa for a more satisfying loop.</p>
+        <div class="spot-meta"><strong>Time:</strong> 1.5-2.5 hours round trip depending on route.</div>
+        <div class="images count-3"><figure><img src="web_images/svartifoss-01-svartifoss-waterfall-visit-vatnajokull.jpg" alt="Svartifoss"></figure>
+<figure><img src="web_images/svartifoss-02-svartifoss-waterfall-hike-iceland-ultimate-guide-and-review-the.jpg" alt="Svartifoss"></figure>
+<figure><img src="web_images/svartifoss-03-the-ultimate-guide-to-svartifoss-waterfall-in-iceland.jpg" alt="Svartifoss"></figure></div>
+        <div class="source-line">campervaniceland.com, thebrutallyhonesttraveler.com, visitvatnajokull.is</div>
+      </article>
+    
+
+      <article class="spot">
+        <div class="spot-kicker">South Coast And Southeast / Viewpoint Hike</div>
+        <div class="spot-title-row">
+          <h4>Sjonarnipa Viewpoint</h4>
+          <div class="rating"><strong>7.5/10</strong><span>good</span></div>
+        </div>
+        <p class="what"><strong>What it is:</strong> A viewpoint above Skaftafell with glacier tongue and outwash plain views.</p>
+        <p class="why"><strong>Why go:</strong> Choose it when visibility is good; cloudy low ceiling can hide the payoff.</p>
+        <div class="spot-meta"><strong>Time:</strong> 2.5-3.5 hours when combined with Svartifoss.</div>
+        <div class="images count-2"><figure><img src="web_images/sjonarnipa-01-sjonarnipa-the-best-viewing-point-in-skaftafell-iceland-travel-guide.jpg" alt="Sjonarnipa Viewpoint"></figure>
+<figure><img src="web_images/sjonarnipa-02-the-sjonarnipa-sjonarsker-hiking-trail-iceland-dream-com.jpg" alt="Sjonarnipa Viewpoint"></figure></div>
+        <div class="source-line">iceland-dream.com, icelandtravelguide.is</div>
+      </article>
+    
+
+      <article class="spot">
+        <div class="spot-kicker">South Coast And Southeast / Glacier</div>
+        <div class="spot-title-row">
+          <h4>Svinafellsjokull</h4>
+          <div class="rating"><strong>7/10</strong><span>good</span></div>
+        </div>
+        <p class="what"><strong>What it is:</strong> An outlet glacier near Skaftafell that makes Vatnajokull feel close and textured.</p>
+        <p class="why"><strong>Why go:</strong> Do not walk on glaciers without a guide and proper equipment.</p>
+        <div class="spot-meta"><strong>Time:</strong> 30-90 minutes for viewpoints; longer with guided activities nearby.</div>
+        <div class="images count-3"><figure><img src="web_images/svinafellsjokull-01-svinafellsjokull-glacier-in-south-license-image-71410829-lookphotos.jpg" alt="Svinafellsjokull"></figure>
+<figure><img src="web_images/svinafellsjokull-02-aerial-panoramic-view-of-svinafellsjokull-glacier-iceland-royalty.jpg" alt="Svinafellsjokull"></figure>
+<figure><img src="web_images/svinafellsjokull-03-svinafellsjokull-glacier-natural-wonder-hiking-of-iceland.jpg" alt="Svinafellsjokull"></figure></div>
+        <div class="source-line">lookphotos.com, matteocolombo.com, reykjavikcars.com</div>
+      </article>
+    </div>
+                </section>
+                
+                <section class="spot-group">
+                  <div class="group-heading">
+                    <h3>Lagoon, Ice, And The Southeast Edge</h3>
+                    <p>The visual climax of the South Coast if you give it time.</p>
+                  </div>
+                  <div class="spot-grid ">
+      <article class="spot featured">
+        <div class="spot-kicker">South Coast And Southeast / Glacier Lagoon</div>
+        <div class="spot-title-row">
+          <h4>Jokulsarlon Glacier Lagoon</h4>
+          <div class="rating"><strong>9.5/10</strong><span>must-go</span></div>
+        </div>
+        <p class="what"><strong>What it is:</strong> A glacier lagoon filled with blue icebergs drifting toward the sea.</p>
+        <p class="why"><strong>Why go:</strong> A place worth seeing twice if you sleep nearby; the lagoon changes with light, wind, tides, and ice movement.</p>
+        <div class="spot-meta"><strong>Time:</strong> 1-2 hours; longer with a boat tour.</div>
+        <div class="images count-5"><figure><img src="web_images/jokulsarlon-01-jokulsarlon-glacier-lagoon-the-crown-jewel-of-iceland-s-nature.jpg" alt="Jokulsarlon Glacier Lagoon"></figure>
+<figure><img src="web_images/jokulsarlon-02-reykjavik-2-day-south-coast-tour-jokulsarlon-glacier-lagoon-2024-viator.jpg" alt="Jokulsarlon Glacier Lagoon"></figure>
+<figure><img src="web_images/jokulsarlon-03-jokulsarlon-glacier-lagoon-see-the-crown-jewel-of-iceland-s-nature.jpg" alt="Jokulsarlon Glacier Lagoon"></figure>
+<figure><img src="web_images/jokulsarlon-04-jokulsarlon-glacier-lagoon-in-iceland-how-to-visit-this-natural-wonder.jpg" alt="Jokulsarlon Glacier Lagoon"></figure>
+<figure><img src="web_images/jokulsarlon-05-jokulsarlon-glacier-lagoon-and-south-coast-day-trip-from-reykjavik-klook.jpg" alt="Jokulsarlon Glacier Lagoon"></figure></div>
+        <div class="source-line">guidetoiceland.is, klook.com, landlopers.com, viator.com</div>
+      </article>
+    
+
+      <article class="spot">
+        <div class="spot-kicker">South Coast And Southeast / Black Sand Beach</div>
+        <div class="spot-title-row">
+          <h4>Diamond Beach</h4>
+          <div class="rating"><strong>8.5/10</strong><span>very good</span></div>
+        </div>
+        <p class="what"><strong>What it is:</strong> Ice chunks from Jokulsarlon scattered across black sand like glass.</p>
+        <p class="why"><strong>Why go:</strong> The beach changes constantly; check both sides of the bridge if time allows.</p>
+        <div class="spot-meta"><strong>Time:</strong> 30-75 minutes after the lagoon.</div>
+        <div class="images count-3"><figure><img src="web_images/diamond-beach-01-black-sand-beaches-in-iceland-expert-world-travel.jpg" alt="Diamond Beach"></figure>
+<figure><img src="web_images/diamond-beach-02-diamond-beach-iceland-travel-made-easy.jpg" alt="Diamond Beach"></figure>
+<figure><img src="web_images/diamond-beach-03-huge-chucks-of-glistening-ice-spread-across-black-volcano-sand.jpg" alt="Diamond Beach"></figure></div>
+        <div class="source-line">expertworldtravel.com, localguide.is, luxurylaunches.com</div>
+      </article>
+    
+
+      <article class="spot">
+        <div class="spot-kicker">South Coast And Southeast / Town</div>
+        <div class="spot-title-row">
+          <h4>Hofn</h4>
+          <div class="rating"><strong>5/10</strong><span>okay</span></div>
+        </div>
+        <p class="what"><strong>What it is:</strong> A southeast harbour town often used as the turn-around or overnight base beyond Jokulsarlon.</p>
+        <p class="why"><strong>Why go:</strong> Useful if you want a less-rushed lagoon day and a better shot at Stokksnes/Vestrahorn.</p>
+        <div class="spot-meta"><strong>Time:</strong> Overnight or meal stop.</div>
+        <div class="images count-1"><figure><img src="web_images/hofn-01-explore-hofn-iceland-a-must-see-hidden-gem.jpg" alt="Hofn"></figure></div>
+        <div class="source-line">campervaniceland.com</div>
+      </article>
+    
+
+      <article class="spot">
+        <div class="spot-kicker">South Coast And Southeast / Photo Landscape</div>
+        <div class="spot-title-row">
+          <h4>Stokksnes and Vestrahorn</h4>
+          <div class="rating"><strong>8/10</strong><span>very good</span></div>
+        </div>
+        <p class="what"><strong>What it is:</strong> A black-sand peninsula and jagged mountain profile near Hofn, beloved by photographers.</p>
+        <p class="why"><strong>Why go:</strong> Best at low-angle light or moody weather; budget for access fees if visiting the private area.</p>
+        <div class="spot-meta"><strong>Time:</strong> 1-2 hours, weather-dependent.</div>
+        <div class="images count-3"><figure><img src="web_images/stokksnes-vestrahorn-01-mighty-vestrahorn-in-stokksnes-iceland-alexios-ntounas-photography.jpg" alt="Stokksnes and Vestrahorn"></figure>
+<figure><img src="web_images/stokksnes-vestrahorn-02-sunset-at-vestrahorn-mountain-and-stokksnes-beach-in-iceland-alexios.jpg" alt="Stokksnes and Vestrahorn"></figure>
+<figure><img src="web_images/stokksnes-vestrahorn-03-iceland-stokksnes-klifatindur-vestrahorn-landscape-in-early-morning.jpg" alt="Stokksnes and Vestrahorn"></figure></div>
+        <div class="source-line">ntounas.gr, westend61.de</div>
+      </article>
+    
+
+      <article class="spot">
+        <div class="spot-kicker">South Coast And Southeast / Island Detour</div>
+        <div class="spot-title-row">
+          <h4>Westman Islands and Heimaey</h4>
+          <div class="rating"><strong>7.5/10</strong><span>good</span></div>
+        </div>
+        <p class="what"><strong>What it is:</strong> A ferry-access island detour with volcanic history, sea cliffs, and puffin context in season.</p>
+        <p class="why"><strong>Why go:</strong> High-value, but only add it if the South Coast schedule has breathing room.</p>
+        <div class="spot-meta"><strong>Time:</strong> Full day to overnight.</div>
+        <div class="images count-2"><figure><img src="web_images/westman-islands-heimaey-01-where-is-westman-village-located-at-minnie-wilkin-blog.jpg" alt="Westman Islands and Heimaey"></figure>
+<figure><img src="web_images/westman-islands-heimaey-02-heimaey-iceland-the-beautiful.jpg" alt="Westman Islands and Heimaey"></figure></div>
+        <div class="source-line">icelandthebeautiful.com, storage.googleapis.com</div>
+      </article>
+    </div>
+                </section>
+                
+            </section>
+            
+            <section class="chapter accent-rust">
+              <p class="eyebrow">Core spine</p>
+              <h2>Highlands, Laugavegur, And Thorsmork</h2>
+              <p class="subtitle">The hiking component that makes the trip feel like more than a road itinerary.</p>
+              <div class="chapter-copy"><p>If hiking is central to the trip, the highlands should get real time. Landmannalaugar is the best one-day sampler, with rhyolite mountains, lava fields, steam, and short-to-long hike options from the same base.</p><p>The classic Laugavegur trek is the big commitment: usually four days from Landmannalaugar to Thorsmork, with huts or campsites arranged in advance. It is not technically difficult, but September weather, river crossings, and transport logistics make it a serious plan.</p><p>Thorsmork is worth attention even if it is only the endpoint. Valahnukur is a short high-payoff viewpoint; Fimmvorduhals is the more demanding extension toward Skogar.</p></div>
+              
+                <section class="spot-group">
+                  <div class="group-heading">
+                    <h3>Landmannalaugar Day-Hike Menu</h3>
+                    <p>Pick a route based on weather, time, and how much climbing you want.</p>
+                  </div>
+                  <div class="spot-grid ">
+      <article class="spot featured">
+        <div class="spot-kicker">Highlands, Laugavegur, And Thorsmork / Highland Hiking</div>
+        <div class="spot-title-row">
+          <h4>Landmannalaugar</h4>
+          <div class="rating"><strong>10/10</strong><span>must-go</span></div>
+        </div>
+        <p class="what"><strong>What it is:</strong> A highland base of rhyolite mountains, lava, steam, hot springs, and exceptional day hikes.</p>
+        <p class="why"><strong>Why go:</strong> The best highland sampler if you do not backpack: lava, steam, hot water, and colored slopes from one trailhead.</p>
+        <div class="spot-meta"><strong>Time:</strong> Full day minimum; also the Laugavegur trailhead.</div>
+        <div class="images count-5"><figure><img src="web_images/landmannalaugar-01-visiting-landmannalaugar-10-tips-all-info-route.jpg" alt="Landmannalaugar"></figure>
+<figure><img src="web_images/landmannalaugar-02-landmannalaugar-tours-day-tours-to-landmannalaugar-iceland.jpg" alt="Landmannalaugar"></figure>
+<figure><img src="web_images/landmannalaugar-03-landmannalaugar-hiking-tour-from-reykjavik-2026.jpg" alt="Landmannalaugar"></figure>
+<figure><img src="web_images/landmannalaugar-04-landmannalaugar-hiking-hot-spring-tour-guide-to-iceland.jpg" alt="Landmannalaugar"></figure>
+<figure><img src="web_images/landmannalaugar-05-landmannalaugar-geothermal-highland-area-tours-in-iceland-hiking-trips.jpg" alt="Landmannalaugar"></figure></div>
+        <div class="source-line">eskimos.is, guidetoiceland.is, icelandtravelguide.is, landmannalaugartours.com, travual.com</div>
+      </article>
+    
+
+      <article class="spot">
+        <div class="spot-kicker">Highlands, Laugavegur, And Thorsmork / Day Hike</div>
+        <div class="spot-title-row">
+          <h4>Laugahraun Loop</h4>
+          <div class="rating"><strong>7.5/10</strong><span>good</span></div>
+        </div>
+        <p class="what"><strong>What it is:</strong> A compact lava-field loop from Landmannalaugar that gives a concentrated highland sampler.</p>
+        <p class="why"><strong>Why go:</strong> Best short hike if time or weather is limited.</p>
+        <div class="spot-meta"><strong>Time:</strong> About 5 km / 2 hours.</div>
+        <div class="images count-2"><figure><img src="web_images/laugahraun-01-best-hikes-of-landmannalaugar-iceland-s-rainbow-mountains.jpg" alt="Laugahraun Loop"></figure>
+<figure><img src="web_images/laugahraun-02-hikes-landmannalaugar-website.jpg" alt="Laugahraun Loop"></figure></div>
+        <div class="source-line">57hours.com, landmannalaugar.org</div>
+      </article>
+    
+
+      <article class="spot">
+        <div class="spot-kicker">Highlands, Laugavegur, And Thorsmork / Mountain Hike</div>
+        <div class="spot-title-row">
+          <h4>Brennisteinsalda</h4>
+          <div class="rating"><strong>8.5/10</strong><span>very good</span></div>
+        </div>
+        <p class="what"><strong>What it is:</strong> A colorful sulfur-streaked mountain often added to the Laugahraun route.</p>
+        <p class="why"><strong>Why go:</strong> The color is the point; prioritize it when visibility is decent.</p>
+        <div class="spot-meta"><strong>Time:</strong> Add roughly 1 hour to the basic loop.</div>
+        <div class="images count-3"><figure><img src="web_images/brennisteinsalda-01-the-brennisteinsalda-hiking-trail-iceland-dream-com.jpg" alt="Brennisteinsalda"></figure>
+<figure><img src="web_images/brennisteinsalda-02-brennisteinsalda-iceland-highlands-morning-light-photography.jpg" alt="Brennisteinsalda"></figure>
+<figure><img src="web_images/brennisteinsalda-03-best-hikes-of-landmannalaugar-iceland-s-rainbow-mountains.jpg" alt="Brennisteinsalda"></figure></div>
+        <div class="source-line">57hours.com, iceland-dream.com, morninglight.us</div>
+      </article>
+    
+
+      <article class="spot">
+        <div class="spot-kicker">Highlands, Laugavegur, And Thorsmork / Summit Hike</div>
+        <div class="spot-title-row">
+          <h4>Blahnukur</h4>
+          <div class="rating"><strong>8.5/10</strong><span>very good</span></div>
+        </div>
+        <p class="what"><strong>What it is:</strong> A dark-blue mountain above Landmannalaugar with one of the area&#x27;s best panorama payoffs.</p>
+        <p class="why"><strong>Why go:</strong> More committing than the easy loop; wind and visibility decide whether it is worth it.</p>
+        <div class="spot-meta"><strong>Time:</strong> About 10 km / 3-4 hours.</div>
+        <div class="images count-3"><figure><img src="web_images/blahnukur-01-hike-the-blahnukur-brennisteinsalda-loop-trail-landmannalaugar-iceland.jpg" alt="Blahnukur"></figure>
+<figure><img src="web_images/blahnukur-02-how-to-hike-mt-blahnukur-the-blue-peak-in-landmannalaugar-iceland.jpg" alt="Blahnukur"></figure>
+<figure><img src="web_images/blahnukur-03-blahnukur-hike-iceland-complete-guide-gpx.jpg" alt="Blahnukur"></figure></div>
+        <div class="source-line">earthtrekkers.com, horizonrando.fr</div>
+      </article>
+    
+
+      <article class="spot">
+        <div class="spot-kicker">Highlands, Laugavegur, And Thorsmork / Crater Lake Hike</div>
+        <div class="spot-title-row">
+          <h4>Ljotipollur</h4>
+          <div class="rating"><strong>7.5/10</strong><span>good</span></div>
+        </div>
+        <p class="what"><strong>What it is:</strong> A red-rimmed crater lake near Landmannalaugar whose name famously undersells it.</p>
+        <p class="why"><strong>Why go:</strong> Good if you want a longer highland day without committing to the full trek.</p>
+        <div class="spot-meta"><strong>Time:</strong> About 13 km / 5-6 hours as a hike.</div>
+        <div class="images count-2"><figure><img src="web_images/ljotipollur-01-best-hikes-of-landmannalaugar-iceland-s-rainbow-mountains.jpg" alt="Ljotipollur"></figure>
+<figure><img src="web_images/ljotipollur-02-ljotipollur-crater-hike-iceland-complete-guide-gpx.jpg" alt="Ljotipollur"></figure></div>
+        <div class="source-line">57hours.com, horizonrando.fr</div>
+      </article>
+    </div>
+                </section>
+                
+                <section class="spot-group">
+                  <div class="group-heading">
+                    <h3>Laugavegur Trek Stages</h3>
+                    <p>The signature multi-day route and the overnight landscapes it moves through.</p>
+                  </div>
+                  <div class="spot-grid ">
+      <article class="spot featured">
+        <div class="spot-kicker">Highlands, Laugavegur, And Thorsmork / Multi-Day Trek</div>
+        <div class="spot-title-row">
+          <h4>Laugavegur Trail</h4>
+          <div class="rating"><strong>10/10</strong><span>must-go</span></div>
+        </div>
+        <p class="what"><strong>What it is:</strong> Iceland&#x27;s signature hut-to-hut/camping trek from Landmannalaugar to Thorsmork.</p>
+        <p class="why"><strong>Why go:</strong> The signature backpacking choice: colorful mountains, black sand, river crossings, huts, and fast-changing weather.</p>
+        <div class="spot-meta"><strong>Time:</strong> Usually 55 km over 4 days; add buffers for weather and transport.</div>
+        <div class="images count-5"><figure><img src="web_images/laugavegur-trail-01-guided-hiking-of-iceland-s-famous-laugavegur-trail-57hours.jpg" alt="Laugavegur Trail"></figure>
+<figure><img src="web_images/laugavegur-trail-02-guided-laugavegur-trail-hiking-tour-iceland-57hours.jpg" alt="Laugavegur Trail"></figure>
+<figure><img src="web_images/laugavegur-trail-03-surreal-magic-icelandic-landscape-of-colorful-rainbow-volcanic.jpg" alt="Laugavegur Trail"></figure>
+<figure><img src="web_images/laugavegur-trail-04-5-day-self-guided-laugavegur-trek-in-iceland.jpg" alt="Laugavegur Trail"></figure>
+<figure><img src="web_images/laugavegur-trail-05-river-crossings-along-the-the-laugavegur-trail.jpg" alt="Laugavegur Trail"></figure></div>
+        <div class="source-line">57hours.com, mountainguides.is, thetravelbug.blog, yayimages.com</div>
+      </article>
+    
+
+      <article class="spot">
+        <div class="spot-kicker">Highlands, Laugavegur, And Thorsmork / Trek Hut</div>
+        <div class="spot-title-row">
+          <h4>Hrafntinnusker</h4>
+          <div class="rating"><strong>7/10</strong><span>good</span></div>
+        </div>
+        <p class="what"><strong>What it is:</strong> The stark, exposed first hut area on the classic Laugavegur route.</p>
+        <p class="why"><strong>Why go:</strong> Expect colder, rougher weather than the lowlands; pack for near-winter texture even in September.</p>
+        <div class="spot-meta"><strong>Time:</strong> Typical day 1 destination from Landmannalaugar.</div>
+        <div class="images count-1"><figure><img src="web_images/hrafntinnusker-01-hut-hrafntinnusker-ferdafelag-islands.jpg" alt="Hrafntinnusker"></figure></div>
+        <div class="source-line">fi.is</div>
+      </article>
+    
+
+      <article class="spot">
+        <div class="spot-kicker">Highlands, Laugavegur, And Thorsmork / Trek Lake</div>
+        <div class="spot-title-row">
+          <h4>Alftavatn</h4>
+          <div class="rating"><strong>7/10</strong><span>good</span></div>
+        </div>
+        <p class="what"><strong>What it is:</strong> A lake-and-hut stage on the Laugavegur, often the second night on classic itineraries.</p>
+        <p class="why"><strong>Why go:</strong> River crossing awareness starts to matter; check hut/ranger advice.</p>
+        <div class="spot-meta"><strong>Time:</strong> Typical day 2 destination.</div>
+        <div class="images count-1"><figure><img src="web_images/alftavatn-01-4-day-guided-trek-in-laugavegur-arctic-adventures.jpg" alt="Alftavatn"></figure></div>
+        <div class="source-line">adventures.is</div>
+      </article>
+    
+
+      <article class="spot">
+        <div class="spot-kicker">Highlands, Laugavegur, And Thorsmork / Trek Hut</div>
+        <div class="spot-title-row">
+          <h4>Emstrur and Botnar</h4>
+          <div class="rating"><strong>7/10</strong><span>good</span></div>
+        </div>
+        <p class="what"><strong>What it is:</strong> A black-sand highland stage on the Laugavegur before descending toward Thorsmork.</p>
+        <p class="why"><strong>Why go:</strong> The landscape becomes more austere here; carry navigation and do not rely on perfect visibility.</p>
+        <div class="spot-meta"><strong>Time:</strong> Typical day 3 destination.</div>
+        <div class="images count-1"><figure><img src="web_images/emstrur-botnar-01-trekking-iceland-laugavegur-trail-alftavatn-to-emstrur-lisa-germany.jpg" alt="Emstrur and Botnar"></figure></div>
+        <div class="source-line">lisagermany.com</div>
+      </article>
+    </div>
+                </section>
+                
+                <section class="spot-group">
+                  <div class="group-heading">
+                    <h3>Thorsmork And The Big Finish</h3>
+                    <p>A lush valley, short viewpoints, and the optional exposed extension to Skogar.</p>
+                  </div>
+                  <div class="spot-grid ">
+      <article class="spot featured">
+        <div class="spot-kicker">Highlands, Laugavegur, And Thorsmork / Glacial Valley</div>
+        <div class="spot-title-row">
+          <h4>Thorsmork</h4>
+          <div class="rating"><strong>9/10</strong><span>great</span></div>
+        </div>
+        <p class="what"><strong>What it is:</strong> A lush, braided-river valley between glaciers and one of Iceland&#x27;s great hiking bases.</p>
+        <p class="why"><strong>Why go:</strong> Self-driving is specialized because river crossings are serious; buses or super-jeep transport are often saner.</p>
+        <div class="spot-meta"><strong>Time:</strong> 1-2 days if visiting beyond just finishing the trek.</div>
+        <div class="images count-5"><figure><img src="web_images/thorsmork-01-10-reasons-to-hike-across-iceland-adventures-com.jpg" alt="Thorsmork"></figure>
+<figure><img src="web_images/thorsmork-02-thorsmork-iceland-s-valley-of-thor-arctic-adventures.jpg" alt="Thorsmork"></figure>
+<figure><img src="web_images/thorsmork-03-reykjavik-thorsmork-valley-and-gigjokull-glacier-tour-getyourguide.jpg" alt="Thorsmork"></figure>
+<figure><img src="web_images/thorsmork-04-birds-eye-view-of-the-valley-of-thorsmork-with-glacier-river-and-snowy.jpg" alt="Thorsmork"></figure>
+<figure><img src="web_images/thorsmork-05-reykjavik-thorsmork-valley-eyjafjallajokull-glacier-tour.jpg" alt="Thorsmork"></figure></div>
+        <div class="source-line">adventures.com, adventures.is, getyourguide.com, indefiniteadventure.com, storyblocks.com</div>
+      </article>
+    
+
+      <article class="spot">
+        <div class="spot-kicker">Highlands, Laugavegur, And Thorsmork / Short Hike</div>
+        <div class="spot-title-row">
+          <h4>Valahnukur</h4>
+          <div class="rating"><strong>8/10</strong><span>very good</span></div>
+        </div>
+        <p class="what"><strong>What it is:</strong> A short Thorsmork summit with a huge viewpoint-to-effort ratio.</p>
+        <p class="why"><strong>Why go:</strong> Short, steep, and high reward: the view explains why Thorsmork is more than a trek endpoint.</p>
+        <div class="spot-meta"><strong>Time:</strong> About 4 km / 1-2 hours.</div>
+        <div class="images count-1"><figure><img src="web_images/valahnukur-01-hiking-in-thorsmork-valahnukur-iceland-wedding-planner.jpg" alt="Valahnukur"></figure></div>
+        <div class="source-line">icelandweddingplanner.com</div>
+      </article>
+    
+
+      <article class="spot">
+        <div class="spot-kicker">Highlands, Laugavegur, And Thorsmork / Extension Trek</div>
+        <div class="spot-title-row">
+          <h4>Fimmvorduhals</h4>
+          <div class="rating"><strong>9/10</strong><span>great</span></div>
+        </div>
+        <p class="what"><strong>What it is:</strong> The dramatic high route between Thorsmork and Skogar, crossing volcanic terrain between glaciers.</p>
+        <p class="why"><strong>Why go:</strong> More exposed and demanding than the main trek; only add it if weather, time, and fitness line up.</p>
+        <div class="spot-meta"><strong>Time:</strong> 1-2 extra days after Laugavegur.</div>
+        <div class="images count-3"><figure><img src="web_images/fimmvorduhals-01-volcano-hiking-experience-at-fimmvorduhals-pass-from-reykjavik-2024.jpg" alt="Fimmvorduhals"></figure>
+<figure><img src="web_images/fimmvorduhals-02-fimmvorduhals-epic-iceland.jpg" alt="Fimmvorduhals"></figure>
+<figure><img src="web_images/fimmvorduhals-03-fimmvorduhals-hike-a-step-by-step-guide-to-iceland-s-best-day-hike.jpg" alt="Fimmvorduhals"></figure></div>
+        <div class="source-line">earthtrekkers.com, epiciceland.net, viator.com</div>
+      </article>
+    </div>
+                </section>
+                
+            </section>
+            
+            <section class="chapter accent-stone">
+              <p class="eyebrow">Best add-on</p>
+              <h2>Snaefellsnes Peninsula</h2>
+              <p class="subtitle">A compact second region if the core south/highland plan leaves two days.</p>
+              <div class="chapter-copy"><p>Snaefellsnes is the best compact add-on because it compresses many Iceland moods into a manageable loop: mountain profiles, lava fields, fishing villages, black beaches, cliffs, seals, and a glacier-capped national park.</p><p>One day is possible but rushed. Two days lets the peninsula feel like a place rather than a long out-and-back drive from Reykjavik.</p><p>Use it after the South Coast if you want variety without committing to the Westfjords or the full Ring Road.</p></div>
+              
+                <section class="spot-group">
+                  <div class="group-heading">
+                    <h3>Iconic North And West</h3>
+                    <p>The mountain-and-waterfall view, harbour towns, and the wilder western tip.</p>
+                  </div>
+                  <div class="spot-grid ">
+      <article class="spot featured">
+        <div class="spot-kicker">Snaefellsnes Peninsula / Region</div>
+        <div class="spot-title-row">
+          <h4>Snaefellsnes Peninsula</h4>
+          <div class="rating"><strong>8.5/10</strong><span>very good</span></div>
+        </div>
+        <p class="what"><strong>What it is:</strong> A compact loop of glacier, lava fields, cliffs, black beaches, fishing villages, and mountain views.</p>
+        <p class="why"><strong>Why go:</strong> The compact add-on: enough variety to feel like a second region without committing to the full Ring Road.</p>
+        <div class="spot-meta"><strong>Time:</strong> 2 days ideal; 1 day is rushed.</div>
+        <div class="images count-5"><figure><img src="web_images/snaefellsnes-01-photography-day-tour-at-snaefellsnes-peninsula-guide-to-iceland.jpg" alt="Snaefellsnes Peninsula"></figure>
+<figure><img src="web_images/snaefellsnes-02-evening-with-kirkjufell-volcano-near-the-coast-of-snaefellsnes-peninsula.jpg" alt="Snaefellsnes Peninsula"></figure>
+<figure><img src="web_images/snaefellsnes-03-snaefellsnes-peninsula-10-epic-stops-and-how-to-find-them-iceland.jpg" alt="Snaefellsnes Peninsula"></figure>
+<figure><img src="web_images/snaefellsnes-04-all-about-the-snaefellsnes-peninsula.jpg" alt="Snaefellsnes Peninsula"></figure>
+<figure><img src="web_images/snaefellsnes-05-snaefellsnes-peninsula-iceland-photography-locations-west-iceland.jpg" alt="Snaefellsnes Peninsula"></figure></div>
+        <div class="source-line">guidetoiceland.is, icelandreview.com, icelandtrippers.com, thewanderinglens.com, windows10spotlight.com</div>
+      </article>
+    
+
+      <article class="spot featured">
+        <div class="spot-kicker">Snaefellsnes Peninsula / Mountain</div>
+        <div class="spot-title-row">
+          <h4>Kirkjufell</h4>
+          <div class="rating"><strong>8/10</strong><span>very good</span></div>
+        </div>
+        <p class="what"><strong>What it is:</strong> The iconic arrow-shaped mountain near Grundarfjordur.</p>
+        <p class="why"><strong>Why go:</strong> Very popular, but still visually useful because it instantly defines Snaefellsnes.</p>
+        <div class="spot-meta"><strong>Time:</strong> 30-75 minutes with Kirkjufellsfoss.</div>
+        <div class="images count-5"><figure><img src="web_images/kirkjufell-01-kirkjufell-mountain-snaefellsnes-peninsula-iceland-travel.jpg" alt="Kirkjufell"></figure>
+<figure><img src="web_images/kirkjufell-02-mt-kirkjufell-as-a-photography-location-guide-to-iceland.jpg" alt="Kirkjufell"></figure>
+<figure><img src="web_images/kirkjufell-03-kirkjufell-mountain-on-the-snaefellsnes-peninsula.jpg" alt="Kirkjufell"></figure>
+<figure><img src="web_images/kirkjufell-04-revealing-kirkjufell-mountain-in-iceland-brent-goldman-photography.jpg" alt="Kirkjufell"></figure>
+<figure><img src="web_images/kirkjufell-05-kirkjufell-mountain-iceland-free-photo-on-pixabay.jpg" alt="Kirkjufell"></figure></div>
+        <div class="source-line">brentgoldmanphotography.com, funiceland.is, guidetoiceland.is, icelandtravel.is, pixabay.com</div>
+      </article>
+    
+
+      <article class="spot">
+        <div class="spot-kicker">Snaefellsnes Peninsula / Waterfall</div>
+        <div class="spot-title-row">
+          <h4>Kirkjufellsfoss</h4>
+          <div class="rating"><strong>6/10</strong><span>decent</span></div>
+        </div>
+        <p class="what"><strong>What it is:</strong> The small waterfall foreground that frames the classic Kirkjufell view.</p>
+        <p class="why"><strong>Why go:</strong> Think of it as the composition point for the mountain rather than a major waterfall by itself.</p>
+        <div class="spot-meta"><strong>Time:</strong> 20-45 minutes.</div>
+        <div class="images count-1"><figure><img src="web_images/kirkjufellsfoss-01-exploring-the-beauty-of-kirkjufellsfoss-a-complete-guide.jpg" alt="Kirkjufellsfoss"></figure></div>
+        <div class="source-line">campervaniceland.com</div>
+      </article>
+    
+
+      <article class="spot">
+        <div class="spot-kicker">Snaefellsnes Peninsula / Town</div>
+        <div class="spot-title-row">
+          <h4>Stykkisholmur</h4>
+          <div class="rating"><strong>6/10</strong><span>decent</span></div>
+        </div>
+        <p class="what"><strong>What it is:</strong> A charming harbour town and practical overnight base on northern Snaefellsnes.</p>
+        <p class="why"><strong>Why go:</strong> A good place to make the peninsula feel like a region rather than a long day trip.</p>
+        <div class="spot-meta"><strong>Time:</strong> Overnight or 1-2 hour stroll.</div>
+        <div class="images count-1"><figure><img src="web_images/stykkisholmur-01-stykkisholmur-town-snaefellsnes-travel-guide-nordic-visitor.jpg" alt="Stykkisholmur"></figure></div>
+        <div class="source-line">iceland.nordicvisitor.com</div>
+      </article>
+    
+
+      <article class="spot">
+        <div class="spot-kicker">Snaefellsnes Peninsula / Cliffs</div>
+        <div class="spot-title-row">
+          <h4>Svortuloft Bird Cliffs</h4>
+          <div class="rating"><strong>6/10</strong><span>decent</span></div>
+        </div>
+        <p class="what"><strong>What it is:</strong> A cliff-and-lighthouse area on the wilder western tip of Snaefellsnes.</p>
+        <p class="why"><strong>Why go:</strong> Good if you have the full two days; easier to drop on a rushed loop.</p>
+        <div class="spot-meta"><strong>Time:</strong> 30-75 minutes.</div>
+        <div class="images count-2"><figure><img src="web_images/svortuloft-01-svortuloft-lighthouse-birdingplaces.jpg" alt="Svortuloft Bird Cliffs"></figure>
+<figure><img src="web_images/svortuloft-02-aerial-view-of-the-orange-svortuloft-lighthouse-on-top-of-the-basalt.jpg" alt="Svortuloft Bird Cliffs"></figure></div>
+        <div class="source-line">birdingplaces.eu, westend61.de</div>
+      </article>
+    
+
+      <article class="spot">
+        <div class="spot-kicker">Snaefellsnes Peninsula / Short Hike</div>
+        <div class="spot-title-row">
+          <h4>Helgafell</h4>
+          <div class="rating"><strong>4.5/10</strong><span>meh</span></div>
+        </div>
+        <p class="what"><strong>What it is:</strong> A small historic hill near Stykkisholmur with a quick viewpoint.</p>
+        <p class="why"><strong>Why go:</strong> Good low-effort leg stretch if staying near Stykkisholmur.</p>
+        <div class="spot-meta"><strong>Time:</strong> 30-60 minutes.</div>
+        <div class="images count-1"><figure><img src="web_images/helgafell-01-helgafell-hiking-trail-gives-you-the-perfect-view-of-reykjavik.jpg" alt="Helgafell"></figure></div>
+        <div class="source-line">stuckiniceland.com</div>
+      </article>
+    </div>
+                </section>
+                
+                <section class="spot-group">
+                  <div class="group-heading">
+                    <h3>South Coast Of The Peninsula</h3>
+                    <p>Cliffs, arches, black pebble beaches, the black church, seals, and a small gorge adventure.</p>
+                  </div>
+                  <div class="spot-grid ">
+      <article class="spot">
+        <div class="spot-kicker">Snaefellsnes Peninsula / Coastal Village</div>
+        <div class="spot-title-row">
+          <h4>Arnarstapi</h4>
+          <div class="rating"><strong>7.5/10</strong><span>good</span></div>
+        </div>
+        <p class="what"><strong>What it is:</strong> A coastal village with basalt cliffs, sea arches, birdlife, and the start of a good coastal walk.</p>
+        <p class="why"><strong>Why go:</strong> One of the strongest non-mountain stops on Snaefellsnes.</p>
+        <div class="spot-meta"><strong>Time:</strong> 1-2 hours; longer if walking to Hellnar.</div>
+        <div class="images count-3"><figure><img src="web_images/arnarstapi-01-arnarstapi-village-in-iceland-adventures-com.jpg" alt="Arnarstapi"></figure>
+<figure><img src="web_images/arnarstapi-02-arnarstapi-is-a-small-fishing-village-located-on-the-snaefellsnes.jpg" alt="Arnarstapi"></figure>
+<figure><img src="web_images/arnarstapi-03-everything-you-should-know-about-arnarstapi-village.jpg" alt="Arnarstapi"></figure></div>
+        <div class="source-line">adventures.com, campervaniceland.com, funiceland.is</div>
+      </article>
+    
+
+      <article class="spot">
+        <div class="spot-kicker">Snaefellsnes Peninsula / Coastal Village</div>
+        <div class="spot-title-row">
+          <h4>Hellnar</h4>
+          <div class="rating"><strong>6.5/10</strong><span>decent</span></div>
+        </div>
+        <p class="what"><strong>What it is:</strong> A tiny coastal settlement linked to Arnarstapi by a scenic cliff walk.</p>
+        <p class="why"><strong>Why go:</strong> Walk at least part of the path if weather is reasonable; the coastline is the attraction.</p>
+        <div class="spot-meta"><strong>Time:</strong> 1-2 hours with the coastal path.</div>
+        <div class="images count-2"><figure><img src="web_images/hellnar-01-hellnar-an-ancient-fishing-village-arctic-adventures.jpg" alt="Hellnar"></figure>
+<figure><img src="web_images/hellnar-02-hellnar-iceland-historic-fishing-village-and-coastal-walk.jpg" alt="Hellnar"></figure></div>
+        <div class="source-line">adventures.is</div>
+      </article>
+    
+
+      <article class="spot">
+        <div class="spot-kicker">Snaefellsnes Peninsula / Sea Stacks</div>
+        <div class="spot-title-row">
+          <h4>Londrangar Sea Stacks</h4>
+          <div class="rating"><strong>7/10</strong><span>good</span></div>
+        </div>
+        <p class="what"><strong>What it is:</strong> Basalt sea stacks and cliff scenery on the south coast of Snaefellsnes.</p>
+        <p class="why"><strong>Why go:</strong> A good quick stop between Arnarstapi/Hellnar and Djupalonssandur.</p>
+        <div class="spot-meta"><strong>Time:</strong> 30-60 minutes.</div>
+        <div class="images count-3"><figure><img src="web_images/londrangar-01-londrangar-iceland-sea-stacks-fine-art-photo-print-photos-by-joseph-c.jpg" alt="Londrangar Sea Stacks"></figure>
+<figure><img src="web_images/londrangar-02-londrangar-sea-stacks-pillars-at-snaefellsnes-peninsula.jpg" alt="Londrangar Sea Stacks"></figure>
+<figure><img src="web_images/londrangar-03-dramatic-cliffs-at-londrangar-sea-stacks-license-image-71410827.jpg" alt="Londrangar Sea Stacks"></figure></div>
+        <div class="source-line">hiticeland.com, imageprofessionals.com, josephfiler.com</div>
+      </article>
+    
+
+      <article class="spot">
+        <div class="spot-kicker">Snaefellsnes Peninsula / Black Pebble Beach</div>
+        <div class="spot-title-row">
+          <h4>Djupalonssandur</h4>
+          <div class="rating"><strong>7.5/10</strong><span>good</span></div>
+        </div>
+        <p class="what"><strong>What it is:</strong> A black pebble beach with lava formations and shipwreck fragments beneath Snaefellsjokull.</p>
+        <p class="why"><strong>Why go:</strong> The surf can be dangerous; admire the water with distance.</p>
+        <div class="spot-meta"><strong>Time:</strong> 45-90 minutes.</div>
+        <div class="images count-3"><figure><img src="web_images/djupalonssandur-01-djupalonssandur-so-much-more-than-just-a-black-sand-beach.jpg" alt="Djupalonssandur"></figure>
+<figure><img src="web_images/djupalonssandur-02-explore-djupalonssandur-beach-in-iceland.jpg" alt="Djupalonssandur"></figure>
+<figure><img src="web_images/djupalonssandur-03-djupalonssandur-beach-western-region-iceland-world-beach-guide.jpg" alt="Djupalonssandur"></figure></div>
+        <div class="source-line">campervaniceland.com, icelandcars.is, worldbeachguide.com</div>
+      </article>
+    
+
+      <article class="spot fit-contain">
+        <div class="spot-kicker">Snaefellsnes Peninsula / Church And Lava Fields</div>
+        <div class="spot-title-row">
+          <h4>Budakirkja and Budir</h4>
+          <div class="rating"><strong>6.5/10</strong><span>decent</span></div>
+        </div>
+        <p class="what"><strong>What it is:</strong> The black church and surrounding lava-field/coastal landscape near Budir.</p>
+        <p class="why"><strong>Why go:</strong> A short but photogenic stop; best with moody light or a clear mountain backdrop.</p>
+        <div class="spot-meta"><strong>Time:</strong> 30-60 minutes.</div>
+        <div class="images count-3"><figure><img src="web_images/budakirkja-budir-01-budakirkja-the-black-church-of-budir-in-iceland-photograph-by-william.jpg" alt="Budakirkja and Budir"></figure>
+<figure><img src="web_images/budakirkja-budir-02-iconic-black-wooden-budakirkja-church-under-the-northern-lights-aurora.jpg" alt="Budakirkja and Budir"></figure>
+<figure><img src="web_images/budakirkja-budir-03-budakirkja-black-church-budir-iceland-photograph-by-toby-mcguire-fine.jpg" alt="Budakirkja and Budir"></figure></div>
+        <div class="source-line">fineartamerica.com, westend61.de</div>
+      </article>
+    
+
+      <article class="spot">
+        <div class="spot-kicker">Snaefellsnes Peninsula / Seal Beach</div>
+        <div class="spot-title-row">
+          <h4>Ytri Tunga</h4>
+          <div class="rating"><strong>6.5/10</strong><span>decent</span></div>
+        </div>
+        <p class="what"><strong>What it is:</strong> A Snaefellsnes beach known for seal watching.</p>
+        <p class="why"><strong>Why go:</strong> Bring a zoom lens or binoculars and give wildlife plenty of space.</p>
+        <div class="spot-meta"><strong>Time:</strong> 30-60 minutes.</div>
+        <div class="images count-1"><figure><img src="web_images/ytri-tunga-01-ytri-tunga-beach-and-its-colony-of-seals-nordical-iceland.jpg" alt="Ytri Tunga"></figure></div>
+        <div class="source-line">nordical.com</div>
+      </article>
+    
+
+      <article class="spot">
+        <div class="spot-kicker">Snaefellsnes Peninsula / Gorge</div>
+        <div class="spot-title-row">
+          <h4>Raudfeldsgja Gorge</h4>
+          <div class="rating"><strong>6.5/10</strong><span>decent</span></div>
+        </div>
+        <p class="what"><strong>What it is:</strong> A narrow cleft in the cliffs that feels like a small adventure stop.</p>
+        <p class="why"><strong>Why go:</strong> Expect wet rock and uneven footing if entering the gorge; only go as far as conditions feel sensible.</p>
+        <div class="spot-meta"><strong>Time:</strong> 45-90 minutes.</div>
+        <div class="images count-2"><figure><img src="web_images/raudfeldsgja-01-best-things-to-do-on-the-snaefellsnes-peninsula-in-1-day-itinerary.jpg" alt="Raudfeldsgja Gorge"></figure>
+<figure><img src="web_images/raudfeldsgja-02-raudfeldsgja-gorge-the-travelling-hiker.jpg" alt="Raudfeldsgja Gorge"></figure></div>
+        <div class="source-line">quannum.com, thetravellinghiker.com</div>
+      </article>
+    
+
+      <article class="spot">
+        <div class="spot-kicker">Snaefellsnes Peninsula / Food Culture</div>
+        <div class="spot-title-row">
+          <h4>Bjarnarhofn Shark Museum</h4>
+          <div class="rating"><strong>5/10</strong><span>okay</span></div>
+        </div>
+        <p class="what"><strong>What it is:</strong> A quirky food-culture stop focused on fermented shark and local history.</p>
+        <p class="why"><strong>Why go:</strong> Only prioritize it if culinary oddities appeal; otherwise keep the peninsula outdoors.</p>
+        <div class="spot-meta"><strong>Time:</strong> 45-75 minutes.</div>
+        <div class="images count-1"><figure><img src="web_images/bjarnarhofn-01-best-way-to-enjoy-icelandic-shark-is-shown-at-bjarnarhofn-shark-museum.jpg" alt="Bjarnarhofn Shark Museum"></figure></div>
+        <div class="source-line">stuckiniceland.com</div>
+      </article>
+    </div>
+                </section>
+                
+            </section>
+            
+            <section class="chapter accent-blue">
+              <p class="eyebrow">Broader research</p>
+              <h2>Extra Picture Pages</h2>
+              <p class="subtitle">Useful visual references if the trip becomes longer, stranger, or more regional.</p>
+              <div class="chapter-copy"><p>These are not all equal recommendations. They are a visual index from the broader research file: places to recognize, compare, and maybe pull into a longer version of the trip.</p><p>The Westfjords and Hornstrandir are not casual detours. North Iceland and the Diamond Circle make sense in a Ring Road version. The Eastfjords are better for quieter roads and hiking than for quick checklist travel.</p><p>For biking, the better ideas are local paths and selected loops, not romanticizing the whole Ring Road shoulder.</p></div>
+              
+                <section class="spot-group">
+                  <div class="group-heading">
+                    <h3>Big Route Choices</h3>
+                    <p>Use these to decide whether the trip should become a wider loop.</p>
+                  </div>
+                  <div class="spot-grid compact-grid">
+      <article class="spot compact">
+        <div class="spot-kicker">Extra Picture Pages / Road Route</div>
+        <div class="spot-title-row">
+          <h4>Ring Road</h4>
+          <div class="rating"><strong>8/10</strong><span>very good</span></div>
+        </div>
+        <p class="what"><strong>What it is:</strong> The 1,322 km national loop; tempting, but only sensible if the trip stretches toward 13 days.</p>
+        <p class="why"><strong>Why go:</strong> Choose it for a broad survey, not for a hiking-heavy trip.</p>
+        <div class="spot-meta"><strong>Time:</strong> Multi-day route.</div>
+        <div class="images count-1"><figure><img src="web_images/ring-road-01-the-ring-road-and-the-other-four-of-iceland-s-main-driving-routes-hey.jpg" alt="Ring Road"></figure></div>
+        <div class="source-line">heyiceland.is</div>
+      </article>
+    
+
+      <article class="spot compact">
+        <div class="spot-kicker">Extra Picture Pages / Road Route</div>
+        <div class="spot-title-row">
+          <h4>Westfjords Way</h4>
+          <div class="rating"><strong>7/10</strong><span>good</span></div>
+        </div>
+        <p class="what"><strong>What it is:</strong> A roughly 950 km touring region of fjords, cliffs, remote roads, and patience.</p>
+        <p class="why"><strong>Why go:</strong> Treat it as the point of a trip, not a quick add-on.</p>
+        <div class="spot-meta"><strong>Time:</strong> Dedicated multi-day region.</div>
+        <div class="images count-1"><figure><img src="web_images/westfjords-way-01-westfjords-way-bikepacking-com.jpg" alt="Westfjords Way"></figure></div>
+        <div class="source-line">bikepacking.com</div>
+      </article>
+    
+
+      <article class="spot compact">
+        <div class="spot-kicker">Extra Picture Pages / Region</div>
+        <div class="spot-title-row">
+          <h4>Westfjords</h4>
+          <div class="rating"><strong>8.5/10</strong><span>very good</span></div>
+        </div>
+        <p class="what"><strong>What it is:</strong> Remote fjords, high cliffs, long drives, and a quieter style of Iceland.</p>
+        <p class="why"><strong>Why go:</strong> Best if you want solitude more than efficiency.</p>
+        <div class="spot-meta"><strong>Time:</strong> Several days.</div>
+        <div class="images count-1"><figure><img src="web_images/westfjords-01-visit-westfjords.jpg" alt="Westfjords"></figure></div>
+        <div class="source-line">westfjords.is</div>
+      </article>
+    
+
+      <article class="spot compact">
+        <div class="spot-kicker">Extra Picture Pages / Region</div>
+        <div class="spot-title-row">
+          <h4>North Iceland</h4>
+          <div class="rating"><strong>8/10</strong><span>very good</span></div>
+        </div>
+        <p class="what"><strong>What it is:</strong> A broader north-coast option with geothermal landscapes, whale towns, waterfalls, and Lake Myvatn.</p>
+        <p class="why"><strong>Why go:</strong> Better in a Ring Road version than in a south/highlands-focused trip.</p>
+        <div class="spot-meta"><strong>Time:</strong> Several days.</div>
+        <div class="images count-1"><figure><img src="web_images/north-iceland-01-10-must-sees-in-north-iceland-best-places-to-visit.jpg" alt="North Iceland"></figure></div>
+        <div class="source-line">nordicvisitor.com</div>
+      </article>
+    
+
+      <article class="spot compact">
+        <div class="spot-kicker">Extra Picture Pages / Route</div>
+        <div class="spot-title-row">
+          <h4>Diamond Circle</h4>
+          <div class="rating"><strong>8/10</strong><span>very good</span></div>
+        </div>
+        <p class="what"><strong>What it is:</strong> The northeast loop linking Myvatn, Dettifoss, Asbyrgi, Husavik, and Godafoss.</p>
+        <p class="why"><strong>Why go:</strong> Strong if you commit to North Iceland; too far for a small detour.</p>
+        <div class="spot-meta"><strong>Time:</strong> 1-2 days once in the north.</div>
+        <div class="images count-1"><figure><img src="web_images/diamond-circle-01-guide-to-iceland-s-diamond-circle-north-iceland-icelandair-us.jpg" alt="Diamond Circle"></figure></div>
+        <div class="source-line">icelandair.com</div>
+      </article>
+    
+
+      <article class="spot compact">
+        <div class="spot-kicker">Extra Picture Pages / Region</div>
+        <div class="spot-title-row">
+          <h4>Eastfjords</h4>
+          <div class="rating"><strong>7.5/10</strong><span>good</span></div>
+        </div>
+        <p class="what"><strong>What it is:</strong> Quiet coastal villages, fjords, mountain roads, and slower scenery between the south and north.</p>
+        <p class="why"><strong>Why go:</strong> Most rewarding when you resist rushing through it.</p>
+        <div class="spot-meta"><strong>Time:</strong> 1-3 days on a Ring Road trip.</div>
+        <div class="images count-1"><figure><img src="web_images/eastfjords-01-seydisfjordur-in-east-iceland.jpg" alt="Eastfjords"></figure></div>
+        <div class="source-line">visiticeland.com</div>
+      </article>
+    </div>
+                </section>
+                
+                <section class="spot-group">
+                  <div class="group-heading">
+                    <h3>Westfjords And Wilderness</h3>
+                    <p>Remote, beautiful, and worth a dedicated plan.</p>
+                  </div>
+                  <div class="spot-grid compact-grid">
+      <article class="spot compact">
+        <div class="spot-kicker">Extra Picture Pages / Waterfall</div>
+        <div class="spot-title-row">
+          <h4>Dynjandi</h4>
+          <div class="rating"><strong>9/10</strong><span>great</span></div>
+        </div>
+        <p class="what"><strong>What it is:</strong> A tiered Westfjords waterfall cluster often treated as the region&#x27;s headline stop.</p>
+        <p class="why"><strong>Why go:</strong> Far away, spectacular, and not a casual south-coast detour.</p>
+        <div class="spot-meta"><strong>Time:</strong> 1-2 hours.</div>
+        <div class="images count-1"><figure><img src="web_images/dynjandi-01-the-magnificent-dynjandi-waterfall-the-jewel-of-the-westfjords-of-iceland.jpg" alt="Dynjandi"></figure></div>
+        <div class="source-line">guidetoiceland.is</div>
+      </article>
+    
+
+      <article class="spot compact">
+        <div class="spot-kicker">Extra Picture Pages / Bird Cliffs</div>
+        <div class="spot-title-row">
+          <h4>Latrabjarg</h4>
+          <div class="rating"><strong>8/10</strong><span>very good</span></div>
+        </div>
+        <p class="what"><strong>What it is:</strong> Huge sea cliffs at Iceland&#x27;s western edge, famous for birdlife in season.</p>
+        <p class="why"><strong>Why go:</strong> Season and weather matter; keep cliff-edge safety conservative.</p>
+        <div class="spot-meta"><strong>Time:</strong> 1-2 hours once nearby.</div>
+        <div class="images count-1"><figure><img src="web_images/latrabjarg-01-latrabjarg-in-the-westfjords-of-iceland-the-largest-sea-bird-cliff-in.jpg" alt="Latrabjarg"></figure></div>
+        <div class="source-line">guidetoiceland.is</div>
+      </article>
+    
+
+      <article class="spot compact">
+        <div class="spot-kicker">Extra Picture Pages / Beach</div>
+        <div class="spot-title-row">
+          <h4>Raudisandur</h4>
+          <div class="rating"><strong>7.5/10</strong><span>good</span></div>
+        </div>
+        <p class="what"><strong>What it is:</strong> A broad red-gold beach that breaks the black-sand stereotype.</p>
+        <p class="why"><strong>Why go:</strong> Most rewarding when you are already committing to the Westfjords.</p>
+        <div class="spot-meta"><strong>Time:</strong> 1-2 hours once nearby.</div>
+        <div class="images count-1"><figure><img src="web_images/raudisandur-01-raudisandur-beach-in-iceland-adventures-com.jpg" alt="Raudisandur"></figure></div>
+        <div class="source-line">adventures.com</div>
+      </article>
+    
+
+      <article class="spot compact">
+        <div class="spot-kicker">Extra Picture Pages / Wilderness</div>
+        <div class="spot-title-row">
+          <h4>Hornstrandir</h4>
+          <div class="rating"><strong>8.5/10</strong><span>very good</span></div>
+        </div>
+        <p class="what"><strong>What it is:</strong> A true Westfjords wilderness reserve with boat access and serious self-support requirements.</p>
+        <p class="why"><strong>Why go:</strong> Not a casual add-on; registration, weather, food, and navigation matter.</p>
+        <div class="spot-meta"><strong>Time:</strong> Multi-day wilderness trip.</div>
+        <div class="images count-1"><figure><img src="web_images/hornstrandir-01-hornstrandir-iceland-s-last-true-wilderness-key-to-iceland.jpg" alt="Hornstrandir"></figure></div>
+        <div class="source-line">keytoiceland.com</div>
+      </article>
+    </div>
+                </section>
+                
+                <section class="spot-group">
+                  <div class="group-heading">
+                    <h3>North Iceland And Myvatn</h3>
+                    <p>A strong Ring Road continuation built around waterfalls, geothermal fields, and whale towns.</p>
+                  </div>
+                  <div class="spot-grid compact-grid">
+      <article class="spot compact">
+        <div class="spot-kicker">Extra Picture Pages / Lake Region</div>
+        <div class="spot-title-row">
+          <h4>Lake Myvatn</h4>
+          <div class="rating"><strong>8.5/10</strong><span>very good</span></div>
+        </div>
+        <p class="what"><strong>What it is:</strong> A volcanic lake region with lava fields, geothermal zones, birds, caves, and baths.</p>
+        <p class="why"><strong>Why go:</strong> One of the north&#x27;s best bases if doing the Ring Road.</p>
+        <div class="spot-meta"><strong>Time:</strong> 1-2 days.</div>
+        <div class="images count-1"><figure><img src="web_images/myvatn-01-a-complete-guide-to-lake-myvatn-in-iceland.jpg" alt="Lake Myvatn"></figure></div>
+        <div class="source-line">adventures.com</div>
+      </article>
+    
+
+      <article class="spot compact">
+        <div class="spot-kicker">Extra Picture Pages / Waterfall</div>
+        <div class="spot-title-row">
+          <h4>Dettifoss</h4>
+          <div class="rating"><strong>8.5/10</strong><span>very good</span></div>
+        </div>
+        <p class="what"><strong>What it is:</strong> A massive north Iceland waterfall known for raw power and canyon scale.</p>
+        <p class="why"><strong>Why go:</strong> Road-side choice matters; check which approach fits your route.</p>
+        <div class="spot-meta"><strong>Time:</strong> 1-2 hours.</div>
+        <div class="images count-1"><figure><img src="web_images/dettifoss-01-dettifoss-waterfall-visit-north-iceland.jpg" alt="Dettifoss"></figure></div>
+        <div class="source-line">northiceland.is</div>
+      </article>
+    
+
+      <article class="spot compact">
+        <div class="spot-kicker">Extra Picture Pages / Canyon</div>
+        <div class="spot-title-row">
+          <h4>Asbyrgi</h4>
+          <div class="rating"><strong>7.5/10</strong><span>good</span></div>
+        </div>
+        <p class="what"><strong>What it is:</strong> A horseshoe-shaped canyon and green shelter within Vatnajokull National Park.</p>
+        <p class="why"><strong>Why go:</strong> Pairs naturally with Dettifoss in the Diamond Circle.</p>
+        <div class="spot-meta"><strong>Time:</strong> 1-3 hours.</div>
+        <div class="images count-1"><figure><img src="web_images/asbyrgi-01-asbyrgi-canyon-in-northern-iceland-northern-iceland-kimkim.jpg" alt="Asbyrgi"></figure></div>
+        <div class="source-line">kimkim.com</div>
+      </article>
+    
+
+      <article class="spot compact">
+        <div class="spot-kicker">Extra Picture Pages / Town</div>
+        <div class="spot-title-row">
+          <h4>Husavik</h4>
+          <div class="rating"><strong>7/10</strong><span>good</span></div>
+        </div>
+        <p class="what"><strong>What it is:</strong> A north-coast town known for whale watching and harbour atmosphere.</p>
+        <p class="why"><strong>Why go:</strong> Better if whale watching is a real priority.</p>
+        <div class="spot-meta"><strong>Time:</strong> Half day to overnight.</div>
+        <div class="images count-1"><figure><img src="web_images/husavik-01-husavik-is-a-beautiful-town-in-north-iceland.jpg" alt="Husavik"></figure></div>
+        <div class="source-line">funiceland.is</div>
+      </article>
+    
+
+      <article class="spot compact">
+        <div class="spot-kicker">Extra Picture Pages / Waterfall</div>
+        <div class="spot-title-row">
+          <h4>Godafoss</h4>
+          <div class="rating"><strong>8/10</strong><span>very good</span></div>
+        </div>
+        <p class="what"><strong>What it is:</strong> A graceful horseshoe waterfall often included on North Iceland loops.</p>
+        <p class="why"><strong>Why go:</strong> Easy, photogenic, and less remote than Dettifoss.</p>
+        <div class="spot-meta"><strong>Time:</strong> 45-90 minutes.</div>
+        <div class="images count-1"><figure><img src="web_images/godafoss-01-godafoss-curved-waterfall-iceland-fine-art-photo-print-photos-by.jpg" alt="Godafoss"></figure></div>
+        <div class="source-line">josephfiler.com</div>
+      </article>
+    
+
+      <article class="spot compact">
+        <div class="spot-kicker">Extra Picture Pages / Lava Formations</div>
+        <div class="spot-title-row">
+          <h4>Dimmuborgir</h4>
+          <div class="rating"><strong>7/10</strong><span>good</span></div>
+        </div>
+        <p class="what"><strong>What it is:</strong> A lava-field maze of dark formations near Myvatn.</p>
+        <p class="why"><strong>Why go:</strong> Good for an easy walk in weird volcanic terrain.</p>
+        <div class="spot-meta"><strong>Time:</strong> 1-2 hours.</div>
+        <div class="images count-1"><figure><img src="web_images/dimmuborgir-01-the-ultimate-guide-to-dimmuborgir-lava-field-in-iceland.jpg" alt="Dimmuborgir"></figure></div>
+        <div class="source-line">reykjavikcars.com</div>
+      </article>
+    
+
+      <article class="spot compact">
+        <div class="spot-kicker">Extra Picture Pages / Geothermal Area</div>
+        <div class="spot-title-row">
+          <h4>Hverir and Namaskard</h4>
+          <div class="rating"><strong>7.5/10</strong><span>good</span></div>
+        </div>
+        <p class="what"><strong>What it is:</strong> Boiling mud, steam vents, sulfur colors, and a very active geothermal landscape near Myvatn.</p>
+        <p class="why"><strong>Why go:</strong> Stay on paths; shoes may smell faintly volcanic afterward.</p>
+        <div class="spot-meta"><strong>Time:</strong> 45-90 minutes.</div>
+        <div class="images count-1"><figure><img src="web_images/hverir-namaskard-01-iceland-geothermal-area-hverir-namaskard-photograph-by-matthias-hauser.jpg" alt="Hverir and Namaskard"></figure></div>
+        <div class="source-line">mobileprints.com</div>
+      </article>
+    
+
+      <article class="spot compact">
+        <div class="spot-kicker">Extra Picture Pages / Lava Cave</div>
+        <div class="spot-title-row">
+          <h4>Grjotagja Cave</h4>
+          <div class="rating"><strong>5.5/10</strong><span>okay</span></div>
+        </div>
+        <p class="what"><strong>What it is:</strong> A small lava cave with vivid geothermal water near Myvatn.</p>
+        <p class="why"><strong>Why go:</strong> Viewing stop only; do not assume bathing is allowed.</p>
+        <div class="spot-meta"><strong>Time:</strong> 20-45 minutes.</div>
+        <div class="images count-1"><figure><img src="web_images/grjotagja-01-grjotagja-lava-cave-in-iceland-alexios-ntounas-photography.jpg" alt="Grjotagja Cave"></figure></div>
+        <div class="source-line">ntounas.gr</div>
+      </article>
+    
+
+      <article class="spot compact">
+        <div class="spot-kicker">Extra Picture Pages / Geothermal Bath</div>
+        <div class="spot-title-row">
+          <h4>Myvatn Nature Baths</h4>
+          <div class="rating"><strong>7/10</strong><span>good</span></div>
+        </div>
+        <p class="what"><strong>What it is:</strong> The north&#x27;s major lagoon-style geothermal bath, usually calmer than the Blue Lagoon.</p>
+        <p class="why"><strong>Why go:</strong> Best if the itinerary actually reaches Myvatn.</p>
+        <div class="spot-meta"><strong>Time:</strong> 2-3 hours.</div>
+        <div class="images count-1"><figure><img src="web_images/myvatn-nature-baths-01-the-ultimate-guide-to-the-best-natural-hot-springs-and-geothermal-pools.jpg" alt="Myvatn Nature Baths"></figure></div>
+        <div class="source-line">northbound.is</div>
+      </article>
+    </div>
+                </section>
+                
+                <section class="spot-group">
+                  <div class="group-heading">
+                    <h3>East, West, And Local Options</h3>
+                    <p>Quieter hiking, Silver Circle ideas, Reykjavik-side biking, and practical towns.</p>
+                  </div>
+                  <div class="spot-grid compact-grid">
+      <article class="spot compact">
+        <div class="spot-kicker">Extra Picture Pages / Village And Hiking Base</div>
+        <div class="spot-title-row">
+          <h4>Borgarfjordur Eystri</h4>
+          <div class="rating"><strong>7/10</strong><span>good</span></div>
+        </div>
+        <p class="what"><strong>What it is:</strong> A small Eastfjords village and hiking hub tied to the Viknaslodir trail network.</p>
+        <p class="why"><strong>Why go:</strong> Consider it if you want quieter hiking than the famous south.</p>
+        <div class="spot-meta"><strong>Time:</strong> Half day to several hiking days.</div>
+        <div class="images count-1"><figure><img src="web_images/borgarfjordur-eystri-01-borgarfjordur-eystri-bakkagerdi-village-in-east-iceland.jpg" alt="Borgarfjordur Eystri"></figure></div>
+        <div class="source-line">hiticeland.com</div>
+      </article>
+    
+
+      <article class="spot compact">
+        <div class="spot-kicker">Extra Picture Pages / Multi-Day Hiking Network</div>
+        <div class="spot-title-row">
+          <h4>Viknaslodir Trails</h4>
+          <div class="rating"><strong>7.5/10</strong><span>good</span></div>
+        </div>
+        <p class="what"><strong>What it is:</strong> A lesser-known Eastfjords hut-to-hut/coastal hiking network around Borgarfjordur Eystri.</p>
+        <p class="why"><strong>Why go:</strong> A real alternative to southern treks if you choose the east.</p>
+        <div class="spot-meta"><strong>Time:</strong> Several days.</div>
+        <div class="images count-1"><figure><img src="web_images/viknaslodir-01-5-day-viknaslodir-trail-hiking-tour-in-iceland-s-east-fjords.jpg" alt="Viknaslodir Trails"></figure></div>
+        <div class="source-line">yourfriendinreykjavik.com</div>
+      </article>
+    
+
+      <article class="spot compact">
+        <div class="spot-kicker">Extra Picture Pages / Forest And Biking</div>
+        <div class="spot-title-row">
+          <h4>Hallormsstadur</h4>
+          <div class="rating"><strong>5.5/10</strong><span>okay</span></div>
+        </div>
+        <p class="what"><strong>What it is:</strong> Iceland&#x27;s largest forest area, mentioned as a better biking/trail option than cycling the Ring Road.</p>
+        <p class="why"><strong>Why go:</strong> A niche stop unless your route is already in the east.</p>
+        <div class="spot-meta"><strong>Time:</strong> Half day.</div>
+        <div class="images count-1"><figure><img src="web_images/hallormsstadur-01-hallormsstadur-national-forest.jpg" alt="Hallormsstadur"></figure></div>
+        <div class="source-line">marinatravel.is</div>
+      </article>
+    
+
+      <article class="spot compact">
+        <div class="spot-kicker">Extra Picture Pages / West Iceland Route</div>
+        <div class="spot-title-row">
+          <h4>Silver Circle</h4>
+          <div class="rating"><strong>6.5/10</strong><span>decent</span></div>
+        </div>
+        <p class="what"><strong>What it is:</strong> A west Iceland scenic loop often built around Borgarfjordur, Husafell, and Hraunfossar.</p>
+        <p class="why"><strong>Why go:</strong> A lower-effort western add-on than the Westfjords.</p>
+        <div class="spot-meta"><strong>Time:</strong> Full day to overnight.</div>
+        <div class="images count-1"><figure><img src="web_images/silver-circle-01-rejseguide-til-island.jpg" alt="Silver Circle"></figure></div>
+        <div class="source-line">zigzagonearth.com</div>
+      </article>
+    
+
+      <article class="spot compact">
+        <div class="spot-kicker">Extra Picture Pages / Waterfall</div>
+        <div class="spot-title-row">
+          <h4>Hraunfossar</h4>
+          <div class="rating"><strong>7.5/10</strong><span>good</span></div>
+        </div>
+        <p class="what"><strong>What it is:</strong> A wide series of lava-fed waterfalls pouring into a blue river.</p>
+        <p class="why"><strong>Why go:</strong> Excellent if you choose the Silver Circle or Husafell area.</p>
+        <div class="spot-meta"><strong>Time:</strong> 45-90 minutes.</div>
+        <div class="images count-1"><figure><img src="web_images/hraunfossar-01-hraunfossar-appear-from-the-lava-field-hallmundarhraun.jpg" alt="Hraunfossar"></figure></div>
+        <div class="source-line">funiceland.is</div>
+      </article>
+    
+
+      <article class="spot compact">
+        <div class="spot-kicker">Extra Picture Pages / Base Area</div>
+        <div class="spot-title-row">
+          <h4>Husafell</h4>
+          <div class="rating"><strong>6.5/10</strong><span>decent</span></div>
+        </div>
+        <p class="what"><strong>What it is:</strong> A west Iceland base for lava, waterfalls, glacier access, and easier scenic days.</p>
+        <p class="why"><strong>Why go:</strong> Useful for a calmer add-on if Snaefellsnes feels too much.</p>
+        <div class="spot-meta"><strong>Time:</strong> Half day to overnight.</div>
+        <div class="images count-1"><figure><img src="web_images/husafell-01-husafell-iceland-the-silver-circle-and-glacier-adventures.jpg" alt="Husafell"></figure></div>
+        <div class="source-line">icelandtravelguide.is</div>
+      </article>
+    
+
+      <article class="spot compact">
+        <div class="spot-kicker">Extra Picture Pages / City Coast</div>
+        <div class="spot-title-row">
+          <h4>Seltjarnarnes and Grotta</h4>
+          <div class="rating"><strong>5/10</strong><span>okay</span></div>
+        </div>
+        <p class="what"><strong>What it is:</strong> A coastal cycling/walking escape from Reykjavik with lighthouse views.</p>
+        <p class="why"><strong>Why go:</strong> Good low-stakes day-one movement if weather cooperates.</p>
+        <div class="spot-meta"><strong>Time:</strong> 1-2 hours by bike or walk.</div>
+        <div class="images count-1"><figure><img src="web_images/seltjarnarnes-01-seltjarnarnes-grotta-visit-reykjavik.jpg" alt="Seltjarnarnes and Grotta"></figure></div>
+        <div class="source-line">visitreykjavik.is</div>
+      </article>
+    
+
+      <article class="spot compact fit-contain">
+        <div class="spot-kicker">Extra Picture Pages / Public Art</div>
+        <div class="spot-title-row">
+          <h4>Sun Voyager</h4>
+          <div class="rating"><strong>4.5/10</strong><span>meh</span></div>
+        </div>
+        <p class="what"><strong>What it is:</strong> The waterfront sculpture often photographed with Faxafloi and mountain views.</p>
+        <p class="why"><strong>Why go:</strong> Easy to combine with Harpa and the harbour walk.</p>
+        <div class="spot-meta"><strong>Time:</strong> 10-20 minutes.</div>
+        <div class="images count-1"><figure><img src="web_images/sun-voyager-01-the-sun-voyager-reykjavik-iceland-dean-mcleod-photography.jpg" alt="Sun Voyager"></figure></div>
+        <div class="source-line">deanmcleodphotography.com</div>
+      </article>
+    
+
+      <article class="spot compact">
+        <div class="spot-kicker">Extra Picture Pages / City Nature</div>
+        <div class="spot-title-row">
+          <h4>Ellidaardalur</h4>
+          <div class="rating"><strong>4.5/10</strong><span>meh</span></div>
+        </div>
+        <p class="what"><strong>What it is:</strong> A green valley and path network in Reykjavik mentioned as a better local biking option.</p>
+        <p class="why"><strong>Why go:</strong> A practical way to ride without committing to highway cycling.</p>
+        <div class="spot-meta"><strong>Time:</strong> 1-2 hours.</div>
+        <div class="images count-1"><figure><img src="web_images/ellidaardalur-01-ellidaardalur-valley-iceland-the-beautiful.jpg" alt="Ellidaardalur"></figure></div>
+        <div class="source-line">icelandthebeautiful.com</div>
+      </article>
+    
+
+      <article class="spot compact">
+        <div class="spot-kicker">Extra Picture Pages / Island</div>
+        <div class="spot-title-row">
+          <h4>Videy Island</h4>
+          <div class="rating"><strong>5/10</strong><span>okay</span></div>
+        </div>
+        <p class="what"><strong>What it is:</strong> A short ferry-access island near Reykjavik with open landscapes and public art.</p>
+        <p class="why"><strong>Why go:</strong> Consider if you want an easy quiet break from the city.</p>
+        <div class="spot-meta"><strong>Time:</strong> Half day.</div>
+        <div class="images count-1"><figure><img src="web_images/videy-01-videy-island-the-magnificent-island-next-to-reykjavik-iceland.jpg" alt="Videy Island"></figure></div>
+        <div class="source-line">icelandtravelguide.is</div>
+      </article>
+    
+
+      <article class="spot compact">
+        <div class="spot-kicker">Extra Picture Pages / Boat Activity</div>
+        <div class="spot-title-row">
+          <h4>Reykjavik Whale Watching</h4>
+          <div class="rating"><strong>6.5/10</strong><span>decent</span></div>
+        </div>
+        <p class="what"><strong>What it is:</strong> Boat trips from the Old Harbour add a wildlife angle to a city stay.</p>
+        <p class="why"><strong>Why go:</strong> Weather and seas decide the experience; keep it flexible.</p>
+        <div class="spot-meta"><strong>Time:</strong> 3-4 hours.</div>
+        <div class="images count-1"><figure><img src="web_images/whale-watching-reykjavik-01-whale-watching-tour-in-reykjavik-iceland.jpg" alt="Reykjavik Whale Watching"></figure></div>
+        <div class="source-line">extremeiceland.is</div>
+      </article>
+    
+
+      <article class="spot compact">
+        <div class="spot-kicker">Extra Picture Pages / Cycling Route</div>
+        <div class="spot-title-row">
+          <h4>Mosfellsbaer</h4>
+          <div class="rating"><strong>4/10</strong><span>meh</span></div>
+        </div>
+        <p class="what"><strong>What it is:</strong> A Reykjavik-adjacent town mentioned as part of a possible ride toward Thingvellir.</p>
+        <p class="why"><strong>Why go:</strong> Use it as cycling context rather than a sightseeing target.</p>
+        <div class="spot-meta"><strong>Time:</strong> Route-dependent.</div>
+        <div class="images count-1"><figure><img src="web_images/mosfellsbaer-01-mosfellsbaer-routes-visit-mosfellsbaer-routes-in-iceland.jpg" alt="Mosfellsbaer"></figure></div>
+        <div class="source-line">visitnordic.com</div>
+      </article>
+    
+
+      <article class="spot compact">
+        <div class="spot-kicker">Extra Picture Pages / Southwest Town</div>
+        <div class="spot-title-row">
+          <h4>Selfoss</h4>
+          <div class="rating"><strong>4/10</strong><span>meh</span></div>
+        </div>
+        <p class="what"><strong>What it is:</strong> A practical southwest town that can anchor Golden Circle or South Coast transitions.</p>
+        <p class="why"><strong>Why go:</strong> Functional more than scenic, but useful for pacing.</p>
+        <div class="spot-meta"><strong>Time:</strong> Meal or overnight stop.</div>
+        <div class="images count-1"><figure><img src="web_images/selfoss-01-discover-selfoss-the-largest-town-in-south-iceland.jpg" alt="Selfoss"></figure></div>
+        <div class="source-line">icelandia.com</div>
+      </article>
+    
+
+      <article class="spot compact">
+        <div class="spot-kicker">Extra Picture Pages / Village And Trailhead</div>
+        <div class="spot-title-row">
+          <h4>Skogar</h4>
+          <div class="rating"><strong>5.5/10</strong><span>okay</span></div>
+        </div>
+        <p class="what"><strong>What it is:</strong> The village/trailhead below Skogafoss and endpoint for the Fimmvorduhals extension.</p>
+        <p class="why"><strong>Why go:</strong> Important if hiking from Thorsmork to the coast.</p>
+        <div class="spot-meta"><strong>Time:</strong> Overnight or trail logistics stop.</div>
+        <div class="images count-1"><figure><img src="web_images/skogar-01-skogar-village-iceland-travel-guide.jpg" alt="Skogar"></figure></div>
+        <div class="source-line">icelandtravelguide.is</div>
+      </article>
+    </div>
+                </section>
+                
+            </section>
+            
+    <section class="sources">
+      <p class="eyebrow">Personal-use web images</p>
+      <h2>Source Appendix</h2>
+      <p>These images are for personal trip planning and friend-sharing. Review source pages and rights before public or commercial use.</p>
+      <table><thead><tr><th>Place</th><th>Source</th><th>Link</th></tr></thead><tbody><tr><td>Reykjavik</td><td>icelandreview.com</td><td><a href="https://www.icelandreview.com/travel/reykjavik-icelands-amazing-capital-city/">source</a></td></tr><tr><td>Reykjavik</td><td>traveladdicts.net</td><td><a href="https://traveladdicts.net/reykjavik-iceland/">source</a></td></tr><tr><td>Hallgrimskirkja</td><td>iceland24blog.com</td><td><a href="https://www.iceland24blog.com/hallgrimskirkja-cathedra/">source</a></td></tr><tr><td>Hallgrimskirkja</td><td>tripsavvy.com</td><td><a href="https://www.tripsavvy.com/hallgrimskirkja-church-in-reykjavik-iceland-1626130">source</a></td></tr><tr><td>Hallgrimskirkja</td><td>art-facts.com</td><td><a href="https://art-facts.com/hallgrimskirkja-reykjavik-facts/">source</a></td></tr><tr><td>Harpa Concert Hall</td><td>guidetoiceland.is</td><td><a href="https://guidetoiceland.is/connect-with-locals/nanna/harpa-reykjaviks-concert-and-conference-hall">source</a></td></tr><tr><td>Harpa Concert Hall</td><td>e-architect.co.uk</td><td><a href="http://www.e-architect.co.uk/iceland/harpa-reykjavik-concert-hall">source</a></td></tr><tr><td>Harpa Concert Hall</td><td>iamreykjavik.com</td><td><a href="https://www.iamreykjavik.com/reykjavik-sightseeing-harpa-concert-hall">source</a></td></tr><tr><td>Old Harbour and Grandi</td><td>loveexploring.com</td><td><a href="https://www.loveexploring.com/news/92411/explore-reykjavik-old-harbour-district-grandi-iceland-nordic-holidays">source</a></td></tr><tr><td>Old Harbour and Grandi</td><td>tripadvisor.com</td><td><a href="https://www.tripadvisor.com/Restaurant_Review-g189970-d27186944-Reviews-Old_Harbour_House-Reykjavik_Capital_Region.html">source</a></td></tr><tr><td>Laugavegur Street</td><td>tripjive.com</td><td><a href="https://tripjive.com/laugavegur-shopping-reykjaviks-premier-retail-haven/">source</a></td></tr><tr><td>Tjornin Pond</td><td>icelandtravel.is</td><td><a href="https://www.icelandtravel.is/attractions/tjornin">source</a></td></tr><tr><td>Perlan</td><td>bradsbackpack.com</td><td><a href="https://bradsbackpack.com/perlan-museum/">source</a></td></tr><tr><td>Perlan</td><td>planpackexplore.com</td><td><a href="https://planpackexplore.com/is-perlan-museum-in-reykjavik-worth-visiting/">source</a></td></tr><tr><td>The Settlement Exhibition</td><td>icelandthebeautiful.com</td><td><a href="https://icelandthebeautiful.com/the-settlement-exhibition-reykjavik-iceland/">source</a></td></tr><tr><td>National Museum of Iceland</td><td>gadventures.com</td><td><a href="https://www.gadventures.com/blog/48-hours-in-reykjavik/">source</a></td></tr><tr><td>Nautholsvik Geothermal Beach</td><td>lookphotos.com</td><td><a href="https://www.lookphotos.com/en/images/70478053-Beach-and-geothermal-swimming-pool-of-nautholsvik-reykjavik-capital-of-iceland-southern-iceland-europe">source</a></td></tr><tr><td>Nautholsvik Geothermal Beach</td><td>pinterest.co.uk</td><td><a href="https://www.pinterest.co.uk/pin/nauthlsvk-geothermal-beach-reykjavik-iceland-located-along-the-gissa-bike-and-walk-path-that-lines-the-capitals--266205027953061794/">source</a></td></tr><tr><td>Sky Lagoon</td><td>luxsphere.co</td><td><a href="https://www.luxsphere.co/sky-lagoon-iceland-lagoon-ocean-views/">source</a></td></tr><tr><td>Sky Lagoon</td><td>matadornetwork.com</td><td><a href="https://matadornetwork.com/read/iceland-sky-lagoon-new-blue-lagoon/">source</a></td></tr><tr><td>Blue Lagoon</td><td>kerstinsherie.com</td><td><a href="https://www.kerstinsherie.com/blue-lagoon-geothermal-bath-iceland/">source</a></td></tr><tr><td>Blue Lagoon</td><td>geothermalzeikai.blogspot.com</td><td><a href="https://geothermalzeikai.blogspot.com/2015/04/blue-lagoon-geothermal-spa-iceland.html">source</a></td></tr><tr><td>Reykjanes Peninsula</td><td>icelandair.com</td><td><a href="https://www.icelandair.com/blog/reykjanes-peninsula-guide/">source</a></td></tr><tr><td>Reykjanes Peninsula</td><td>allthingsiceland.com</td><td><a href="https://allthingsiceland.com/visit-reykjanes-peninsula/">source</a></td></tr><tr><td>Bridge Between Continents</td><td>icelandtravelguide.is</td><td><a href="https://icelandtravelguide.is/locations/the-bridge-between-continents/">source</a></td></tr><tr><td>Krysuvik and Seltun</td><td>micoope.com.gt</td><td><a href="https://www.micoope.com.gt/?o=seltun-geothermal-area-krysuvik-reykjanes-peninsula-in-iceland-stock-nn-By0kBpCr">source</a></td></tr><tr><td>Krysuvik and Seltun</td><td>guidetoiceland.is</td><td><a href="https://guidetoiceland.is/connect-with-locals/regina/the-colourful-geothermal-area-at-seltun-krysuvik-on-the-reykjanes-peninsula-in-sw-iceland">source</a></td></tr><tr><td>Reykjanesviti Lighthouse</td><td>trailheadcentral.com</td><td><a href="https://trailheadcentral.com/Reykjavegur_Trail">source</a></td></tr><tr><td>Thingvellir National Park</td><td>reykjavikcars.com</td><td><a href="https://www.reykjavikcars.com/blog/around-iceland/thingvellir-national-park">source</a></td></tr><tr><td>Thingvellir National Park</td><td>traveltoiceland.com</td><td><a href="https://www.traveltoiceland.com/post/thingvellir-national-park">source</a></td></tr><tr><td>Thingvellir National Park</td><td>peakvisor.com</td><td><a href="https://peakvisor.com/park/thingvellir-national-park.html">source</a></td></tr><tr><td>Oxararfoss</td><td>icelandcars.is</td><td><a href="https://www.icelandcars.is/blogs/oxararfoss">source</a></td></tr><tr><td>Oxararfoss</td><td>fineartamerica.com</td><td><a href="https://fineartamerica.com/featured/1-oxararfoss-waterfall-iceland-ivan-batinic.html">source</a></td></tr><tr><td>Almannagja Gorge</td><td>reykjavikcars.com</td><td><a href="https://www.reykjavikcars.com/blog/around-iceland/almannagja-gorge">source</a></td></tr><tr><td>Almannagja Gorge</td><td>campervaniceland.com</td><td><a href="https://www.campervaniceland.com/blog/things-to-do/almannagja-gorge">source</a></td></tr><tr><td>Geysir and Strokkur</td><td>oceaninfo.com</td><td><a href="https://oceaninfo.com/ocean/geology/geysir-strokkur/">source</a></td></tr><tr><td>Geysir and Strokkur</td><td>empnefsysandtravel.com</td><td><a href="https://empnefsysandtravel.com/how-to-visit-iceland-without-a-car/strokkur-geysir-geothermal-area">source</a></td></tr><tr><td>Geysir and Strokkur</td><td>funiceland.is</td><td><a href="https://www.funiceland.is/nature/geysers-hot-springs/geysir/">source</a></td></tr><tr><td>Gullfoss</td><td>ntounas.gr</td><td><a href="https://www.ntounas.gr/gullfoss-waterfall-in-iceland/">source</a></td></tr><tr><td>Gullfoss</td><td>campingiceland.com</td><td><a href="http://www.campingiceland.com/gullfoss-waterfall">source</a></td></tr><tr><td>Gullfoss</td><td>icelandreview.com</td><td><a href="https://www.icelandreview.com/travel/a-guide-to-gullfoss/">source</a></td></tr><tr><td>Kerid Crater</td><td>picture-of-day.com</td><td><a href="https://www.picture-of-day.com/2020/01/kerid-crater-lake-iceland.html">source</a></td></tr><tr><td>Laugarvatn Fontana</td><td>icelandtravelguide.is</td><td><a href="https://icelandtravelguide.is/tours/laugarvatn-fontana-admission-to-the-geothermal-baths/">source</a></td></tr><tr><td>Laugarvatn Fontana</td><td>tripadvisor.ie</td><td><a href="https://www.tripadvisor.ie/Attraction_Review-g315851-d2331563-Reviews-or5-Laugarvatn_Fontana_Geothermal_Baths-Laugarvatn_South_Region.html">source</a></td></tr><tr><td>Secret Lagoon</td><td>adventures.is</td><td><a href="https://adventures.is/iceland/attractions/the-secret-lagoon/">source</a></td></tr><tr><td>Secret Lagoon</td><td>buubble.com</td><td><a href="https://www.buubble.com/secret-lagoon-in-iceland/">source</a></td></tr><tr><td>Fridheimar Tomato Farm</td><td>apronandsneakers.com</td><td><a href="https://www.apronandsneakers.com/2024/01/fridheimar-tomato-farm-dining-among.html">source</a></td></tr><tr><td>Skalholt</td><td>travelreykjavik.com</td><td><a href="https://www.travelreykjavik.com/attractions/iceland/skalholt-historical-site/">source</a></td></tr><tr><td>Seljalandsfoss</td><td>matteocolombo.com</td><td><a href="https://www.matteocolombo.com/media/d4a1733e-3d50-4eb2-aef3-5ef90ab8c13f-aerial-panoramic-view-of-seljalandsfoss-waterfall-at-sunset-ic">source</a></td></tr><tr><td>Seljalandsfoss</td><td>iceland24blog.com</td><td><a href="https://www.iceland24blog.com/seljalandsfoss-most-beautiful-waterfall-iceland/">source</a></td></tr><tr><td>Seljalandsfoss</td><td>icelandtrippers.com</td><td><a href="https://icelandtrippers.com/seljalandsfoss-waterfall/">source</a></td></tr><tr><td>Gljufrabui</td><td>app.advcollective.com</td><td><a href="https://app.advcollective.com/iceland/Water%20Sports/the-hidden-waterfall-gljufrabui">source</a></td></tr><tr><td>Gljufrabui</td><td>icelandtravelguide.is</td><td><a href="https://icelandtravelguide.is/locations/gljufrabui-waterfall/">source</a></td></tr><tr><td>Skogafoss</td><td>adventures.is</td><td><a href="https://adventures.is/iceland/attractions/skogafoss/">source</a></td></tr><tr><td>Skogafoss</td><td>funiceland.is</td><td><a href="https://www.funiceland.is/nature/waterfalls/skogafoss/">source</a></td></tr><tr><td>Skogafoss</td><td>tripsavvy.com</td><td><a href="https://www.tripsavvy.com/iceland-skogafoss-waterfall-the-complete-guide-4175007">source</a></td></tr><tr><td>Kvernufoss</td><td>icelandtravelguide.is</td><td><a href="https://icelandtravelguide.is/locations/kvernufoss-waterfall/">source</a></td></tr><tr><td>Kvernufoss</td><td>adventurouskate.com</td><td><a href="https://www.adventurouskate.com/kvernufoss-waterfall-iceland/">source</a></td></tr><tr><td>Reynisfjara Black Sand Beach</td><td>icelandcars.is</td><td><a href="https://www.icelandcars.is/blogs/reynisfjara">source</a></td></tr><tr><td>Reynisfjara Black Sand Beach</td><td>theworldpursuit.com</td><td><a href="https://theworldpursuit.com/icelands-black-sand-beach-reynisfjara/">source</a></td></tr><tr><td>Reynisfjara Black Sand Beach</td><td>fodors.com</td><td><a href="https://www.fodors.com/news/photos/the-worlds-20-best-black-sand-beaches">source</a></td></tr><tr><td>Reynisfjara Black Sand Beach</td><td>mybestplace.com</td><td><a href="https://www.mybestplace.com/en/article/reynisfjara-icelands-black-sand-beach">source</a></td></tr><tr><td>Reynisfjara Black Sand Beach</td><td>hikerwise.com</td><td><a href="https://hikerwise.com/reynisfjara-black-sand-beach/">source</a></td></tr><tr><td>Dyrholaey</td><td>500px.com</td><td><a href="https://500px.com/photo/287565869/aerial-view-of-dyrholaey-by-iurie-belegurschi">source</a></td></tr><tr><td>Dyrholaey</td><td>icelandtravelguide.is</td><td><a href="https://icelandtravelguide.is/locations/dyrholaey/">source</a></td></tr><tr><td>Dyrholaey</td><td>funiceland.is</td><td><a href="https://www.funiceland.is/nature/capes-cliffs/dyrholaey/">source</a></td></tr><tr><td>Vik i Myrdal</td><td>yourdaytours.is</td><td><a href="https://yourdaytours.is/attractions/vik-myrdal-iceland/">source</a></td></tr><tr><td>Fjadrargljufur Canyon</td><td>birdseyeviewphotography.com.au</td><td><a href="http://www.birdseyeviewphotography.com.au/blog/?p=2312">source</a></td></tr><tr><td>Fjadrargljufur Canyon</td><td>funiceland.is</td><td><a href="https://www.funiceland.is/nature/canyons/fjadrargljufur/">source</a></td></tr><tr><td>Fjadrargljufur Canyon</td><td>backpackersintheworld.com</td><td><a href="https://backpackersintheworld.com/fjadrargljufur-canyon-in-iceland-a-complete-guide/">source</a></td></tr><tr><td>Skaftafell</td><td>fosshotelglacierlagoon.com</td><td><a href="https://fosshotelglacierlagoon.com/hiking-in-skaftafell-nature-reserve-your-ultimate-guide-from-fosshotel-glacier-lagoon-iceland/">source</a></td></tr><tr><td>Skaftafell</td><td>visitvatnajokull.is</td><td><a href="https://visitvatnajokull.is/skaftafell/">source</a></td></tr><tr><td>Skaftafell</td><td>troll.is</td><td><a href="https://troll.is/skaftafell/">source</a></td></tr><tr><td>Skaftafell</td><td>myoutdoorbasecamp.com</td><td><a href="https://myoutdoorbasecamp.com/kristinartindar/">source</a></td></tr><tr><td>Skaftafell</td><td>kimkim.com</td><td><a href="https://www.kimkim.com/e/skaftafell-blue-ice-cave-glacier-hike">source</a></td></tr><tr><td>Svartifoss</td><td>visitvatnajokull.is</td><td><a href="https://visitvatnajokull.is/attraction/svartifoss-waterfall/">source</a></td></tr><tr><td>Svartifoss</td><td>thebrutallyhonesttraveler.com</td><td><a href="https://thebrutallyhonesttraveler.com/svartifoss-waterfall-hike-iceland-ultimate-guide-and-review/">source</a></td></tr><tr><td>Svartifoss</td><td>campervaniceland.com</td><td><a href="https://www.campervaniceland.com/blog/natural-attractions/black-waterfall-svartifoss">source</a></td></tr><tr><td>Sjonarnipa Viewpoint</td><td>icelandtravelguide.is</td><td><a href="https://icelandtravelguide.is/locations/sjonarnipa/">source</a></td></tr><tr><td>Sjonarnipa Viewpoint</td><td>iceland-dream.com</td><td><a href="https://www.iceland-dream.com/guide/south/skaftafell/sjonarnipa-sjonarsker">source</a></td></tr><tr><td>Svinafellsjokull</td><td>lookphotos.com</td><td><a href="https://www.lookphotos.com/en-us/images/71410829-Svinafellsjokull-glacier-in-south-Iceland">source</a></td></tr><tr><td>Svinafellsjokull</td><td>matteocolombo.com</td><td><a href="https://www.matteocolombo.com/media/c89a516d-024c-4d84-a98f-caf200d91bc4-aerial-panoramic-view-of-svinafellsjokull-glacier-iceland">source</a></td></tr><tr><td>Svinafellsjokull</td><td>reykjavikcars.com</td><td><a href="https://www.reykjavikcars.com/blog/activities/svinafellsjokull">source</a></td></tr><tr><td>Jokulsarlon Glacier Lagoon</td><td>guidetoiceland.is</td><td><a href="https://guidetoiceland.is/best-of-iceland/jokulsarlon-glacier-lagoon-the-crown-jewel-of-iceland-s-nature">source</a></td></tr><tr><td>Jokulsarlon Glacier Lagoon</td><td>viator.com</td><td><a href="https://www.viator.com/en-ZA/tours/Reykjavik/2-Day-South-Coast-Jokulsarlon-Glacier-Lagoon-Glacier-Hike-and-DC-3-Plane-Wreck/d905-50287P12">source</a></td></tr><tr><td>Jokulsarlon Glacier Lagoon</td><td>landlopers.com</td><td><a href="https://landlopers.com/2016/09/20/jokulsarlon-glacier-lagoon">source</a></td></tr><tr><td>Jokulsarlon Glacier Lagoon</td><td>klook.com</td><td><a href="https://www.klook.com/ja/activity/6501-jokulsarlon-glacier-lagoon-south-coast-day-trip-reykjavik/">source</a></td></tr><tr><td>Diamond Beach</td><td>expertworldtravel.com</td><td><a href="https://expertworldtravel.com/black-sand-beaches-iceland/">source</a></td></tr><tr><td>Diamond Beach</td><td>localguide.is</td><td><a href="https://localguide.is/diamond-beach-iceland-travel-made-easy/">source</a></td></tr><tr><td>Diamond Beach</td><td>luxurylaunches.com</td><td><a href="https://luxurylaunches.com/travel/iceland-diamond-beach.php">source</a></td></tr><tr><td>Hofn</td><td>campervaniceland.com</td><td><a href="https://www.campervaniceland.com/blog/things-to-do/hofn">source</a></td></tr><tr><td>Stokksnes and Vestrahorn</td><td>ntounas.gr</td><td><a href="https://www.ntounas.gr/mighty-vestrahorn-in-stokksnes-iceland/">source</a></td></tr><tr><td>Stokksnes and Vestrahorn</td><td>ntounas.gr</td><td><a href="https://www.ntounas.gr/sunset-at-vestrahorn-mountain-and-stokksnes-beach-in-iceland/">source</a></td></tr><tr><td>Stokksnes and Vestrahorn</td><td>westend61.de</td><td><a href="https://www.westend61.de/en/photo/TAMF01742/iceland-stokksnes-klifatindur-vestrahorn-landscape-in-early-morning">source</a></td></tr><tr><td>Westman Islands and Heimaey</td><td>storage.googleapis.com</td><td><a href="https://storage.googleapis.com/dosjhhhhrhudye/where-is-westman-village-located.html">source</a></td></tr><tr><td>Westman Islands and Heimaey</td><td>icelandthebeautiful.com</td><td><a href="https://icelandthebeautiful.com/heimaey-island-vestmannaeyjar-westman-islands-iceland/">source</a></td></tr><tr><td>Landmannalaugar</td><td>travual.com</td><td><a href="https://www.travual.com/blog/iceland/landmannalaugar-iceland/">source</a></td></tr><tr><td>Landmannalaugar</td><td>landmannalaugartours.com</td><td><a href="https://www.landmannalaugartours.com/">source</a></td></tr><tr><td>Landmannalaugar</td><td>icelandtravelguide.is</td><td><a href="https://icelandtravelguide.is/tours/landmannalaugar-hiking-tour-from-reykjavik/">source</a></td></tr><tr><td>Landmannalaugar</td><td>guidetoiceland.is</td><td><a href="https://guidetoiceland.is/book-holiday-trips/landmannalaugar-hiking-hot-spring-tour">source</a></td></tr><tr><td>Landmannalaugar</td><td>eskimos.is</td><td><a href="https://www.eskimos.is/inspirations/locations/landmannalaugar/">source</a></td></tr><tr><td>Laugahraun Loop</td><td>57hours.com</td><td><a href="https://57hours.com/best-of/hikes-landmannalaugar/">source</a></td></tr><tr><td>Laugahraun Loop</td><td>landmannalaugar.org</td><td><a href="https://landmannalaugar.org/hikes/">source</a></td></tr><tr><td>Brennisteinsalda</td><td>iceland-dream.com</td><td><a href="https://www.iceland-dream.com/guide/highlands/landmannalaugar/brennisteinsalda">source</a></td></tr><tr><td>Brennisteinsalda</td><td>morninglight.us</td><td><a href="https://www.morninglight.us/photo/brennisteinsalda/">source</a></td></tr><tr><td>Brennisteinsalda</td><td>57hours.com</td><td><a href="https://57hours.com/best-of/hikes-landmannalaugar/">source</a></td></tr><tr><td>Blahnukur</td><td>earthtrekkers.com</td><td><a href="https://www.earthtrekkers.com/hike-blahnukur-brennisteinsalda-loop-landmannalaugar/">source</a></td></tr><tr><td>Blahnukur</td><td>earthtrekkers.com</td><td><a href="https://www.earthtrekkers.com/how-to-hike-blahnukur-landmannalaugar-iceland/">source</a></td></tr><tr><td>Blahnukur</td><td>horizonrando.fr</td><td><a href="https://www.horizonrando.fr/en/iceland/blahnukur/">source</a></td></tr><tr><td>Ljotipollur</td><td>57hours.com</td><td><a href="https://57hours.com/best-of/hikes-landmannalaugar/">source</a></td></tr><tr><td>Ljotipollur</td><td>horizonrando.fr</td><td><a href="https://www.horizonrando.fr/en/iceland/ljotipollur-lake/">source</a></td></tr><tr><td>Laugavegur Trail</td><td>57hours.com</td><td><a href="https://57hours.com/premium-adventures/hiking-laugavegur-trail-iceland/">source</a></td></tr><tr><td>Laugavegur Trail</td><td>57hours.com</td><td><a href="https://57hours.com/adventure/laugavegur-trail-tour/">source</a></td></tr><tr><td>Laugavegur Trail</td><td>yayimages.com</td><td><a href="https://yayimages.com/36060410/surreal-magic-icelandic-landscape-of-colorful-rainbow-volcanic-landmannalaugar-mountains-red-and-pink-volcanic-crater-stutur-at-famous-laugavegur-hiking-trail-with-dramatic-sky-iceland.html">source</a></td></tr><tr><td>Laugavegur Trail</td><td>mountainguides.is</td><td><a href="https://www.mountainguides.is/tour/laugavegur-self-guided">source</a></td></tr><tr><td>Laugavegur Trail</td><td>thetravelbug.blog</td><td><a href="https://www.thetravelbug.blog/trips/laugavegur-trail-details.html">source</a></td></tr><tr><td>Hrafntinnusker</td><td>fi.is</td><td><a href="https://www.fi.is/en/mountain-huts/all-mountain-huts/hrafntinnusker">source</a></td></tr><tr><td>Alftavatn</td><td>adventures.is</td><td><a href="https://adventures.is/iceland/multiday-tours/trekking-tours/laugavegur-trekking-tents-4days/">source</a></td></tr><tr><td>Emstrur and Botnar</td><td>lisagermany.com</td><td><a href="https://lisagermany.com/trekking-iceland-laugavegur-alftavatn-emstrur/">source</a></td></tr><tr><td>Thorsmork</td><td>adventures.com</td><td><a href="https://adventures.com/blog/10-reasons-hike-across-iceland/">source</a></td></tr><tr><td>Thorsmork</td><td>adventures.is</td><td><a href="https://adventures.is/iceland/attractions/thorsmork/">source</a></td></tr><tr><td>Thorsmork</td><td>getyourguide.com</td><td><a href="https://www.getyourguide.com/selfoss-l34851/reykjavik-thorsmork-valley-and-gigjokull-glacier-tour-t868860/">source</a></td></tr><tr><td>Thorsmork</td><td>storyblocks.com</td><td><a href="https://www.storyblocks.com/images/stock/birds-eye-view-of-the-valley-of-thorsmork-with-glacier-river-and-snowy-highlands-in-iceland-from-above-view-of-krossa-river-flowing-through-porsmork-canyon-beauty-on-earth-valley-thorsmork-351167535">source</a></td></tr><tr><td>Thorsmork</td><td>indefiniteadventure.com</td><td><a href="https://www.indefiniteadventure.com/reykjavik-thorsmork-valley-eyjafjallajokull-glacier-tour/">source</a></td></tr><tr><td>Valahnukur</td><td>icelandweddingplanner.com</td><td><a href="https://icelandweddingplanner.com/2023/11/30/hiking-in-thorsmork-valahnukur/">source</a></td></tr><tr><td>Fimmvorduhals</td><td>viator.com</td><td><a href="https://www.viator.com/tours/Vik/Fimmvorduhals-Volcano-Hiking-Experience-from-Reykjavik/d25269-23924P10">source</a></td></tr><tr><td>Fimmvorduhals</td><td>epiciceland.net</td><td><a href="https://epiciceland.net/tag/fimmvorduhals/">source</a></td></tr><tr><td>Fimmvorduhals</td><td>earthtrekkers.com</td><td><a href="https://www.earthtrekkers.com/fimmvorduhals-hike-complete-guide/">source</a></td></tr><tr><td>Snaefellsnes Peninsula</td><td>guidetoiceland.is</td><td><a href="https://guidetoiceland.is/book-holiday-trips/photography-day-tour-at-snaefellsnes-peninsula">source</a></td></tr><tr><td>Snaefellsnes Peninsula</td><td>windows10spotlight.com</td><td><a href="https://windows10spotlight.com/images/7126">source</a></td></tr><tr><td>Snaefellsnes Peninsula</td><td>icelandtrippers.com</td><td><a href="https://icelandtrippers.com/snaefellsnes-peninsula-iceland/">source</a></td></tr><tr><td>Snaefellsnes Peninsula</td><td>icelandreview.com</td><td><a href="https://www.icelandreview.com/travel/all-about-the-snaefellsnes-peninsula/">source</a></td></tr><tr><td>Snaefellsnes Peninsula</td><td>thewanderinglens.com</td><td><a href="https://www.thewanderinglens.com/photography-locations-iceland-snaefellsnes-peninsula/">source</a></td></tr><tr><td>Kirkjufell</td><td>icelandtravel.is</td><td><a href="https://www.icelandtravel.is/attractions/kirkjufell">source</a></td></tr><tr><td>Kirkjufell</td><td>guidetoiceland.is</td><td><a href="https://guidetoiceland.is/connect-with-locals/5176/mt-kirkjufell-as-a-photography-location">source</a></td></tr><tr><td>Kirkjufell</td><td>funiceland.is</td><td><a href="https://www.funiceland.is/nature/mountains/kirkjufell/">source</a></td></tr><tr><td>Kirkjufell</td><td>brentgoldmanphotography.com</td><td><a href="https://www.brentgoldmanphotography.com/print/revealing-kirkjufell-mountain">source</a></td></tr><tr><td>Kirkjufell</td><td>pixabay.com</td><td><a href="https://pixabay.com/photos/kirkjufell-mountain-iceland-2148191/">source</a></td></tr><tr><td>Kirkjufellsfoss</td><td>campervaniceland.com</td><td><a href="https://www.campervaniceland.com/blog/things-to-do/kirkjufellsfoss-waterfall">source</a></td></tr><tr><td>Stykkisholmur</td><td>iceland.nordicvisitor.com</td><td><a href="https://iceland.nordicvisitor.com/travel-guide/attractions/west-iceland/stykkisholmur/">source</a></td></tr><tr><td>Svortuloft Bird Cliffs</td><td>birdingplaces.eu</td><td><a href="https://www.birdingplaces.eu/en/birdingplaces/iceland/svortuloft-lighthouse">source</a></td></tr><tr><td>Svortuloft Bird Cliffs</td><td>westend61.de</td><td><a href="https://www.westend61.de/en/photo/RHPLF24495/aerial-view-of-the-orange-svortuloft-lighthouse-on-top-of-the-basalt-cliffs-at-sunset-snaefellsbaer-snaefellsjokull-national-park-snaefellsens-peninsula-vesturland-west-iceland-iceland-polar-regions">source</a></td></tr><tr><td>Helgafell</td><td>stuckiniceland.com</td><td><a href="https://www.stuckiniceland.com/helgafell-hiking-trail-gives-you-the-perfect-view-of-reykjavik/">source</a></td></tr><tr><td>Arnarstapi</td><td>adventures.com</td><td><a href="https://adventures.com/iceland/attractions/cities-towns/arnarstapi/">source</a></td></tr><tr><td>Arnarstapi</td><td>funiceland.is</td><td><a href="https://www.funiceland.is/nature/places/arnarstapi/">source</a></td></tr><tr><td>Arnarstapi</td><td>campervaniceland.com</td><td><a href="https://www.campervaniceland.com/blog/things-to-do/arnarstapi">source</a></td></tr><tr><td>Hellnar</td><td>adventures.is</td><td><a href="https://adventures.is/iceland/attractions/hellnar/">source</a></td></tr><tr><td>Londrangar Sea Stacks</td><td>josephfiler.com</td><td><a href="https://www.josephfiler.com/photo/iceland-birds-and-stacks/">source</a></td></tr><tr><td>Londrangar Sea Stacks</td><td>hiticeland.com</td><td><a href="https://www.hiticeland.com/post/londrangar-pillars-at-snaefellsnes-peninsula">source</a></td></tr><tr><td>Londrangar Sea Stacks</td><td>imageprofessionals.com</td><td><a href="https://www.imageprofessionals.com/en/images/71410827-Dramatic-cliffs-at-Londrangar-sea-stacks-in-the-North-Atlantic-ocean-on-the-Snaefellsnes-peninsula-in-western">source</a></td></tr><tr><td>Djupalonssandur</td><td>campervaniceland.com</td><td><a href="https://www.campervaniceland.com/blog/things-to-do/djupalonssandur">source</a></td></tr><tr><td>Djupalonssandur</td><td>icelandcars.is</td><td><a href="https://www.icelandcars.is/blogs/djupalonssandur">source</a></td></tr><tr><td>Djupalonssandur</td><td>worldbeachguide.com</td><td><a href="https://www.worldbeachguide.com/iceland/djupalonssandur-beach.htm">source</a></td></tr><tr><td>Budakirkja and Budir</td><td>fineartamerica.com</td><td><a href="https://fineartamerica.com/featured/budakirkja-the-black-church-of-budir-in-iceland-william-dickman.html">source</a></td></tr><tr><td>Budakirkja and Budir</td><td>westend61.de</td><td><a href="https://www.westend61.de/en/photo/RHPLF24508/iconic-black-wooden-budakirkja-church-under-the-northern-lights-aurora-borealis-budir-snaefellsness-peninsula-vesturland-iceland-polar-regions">source</a></td></tr><tr><td>Budakirkja and Budir</td><td>fineartamerica.com</td><td><a href="https://fineartamerica.com/featured/budakirkja-black-church-budir-iceland-toby-mcguire.html">source</a></td></tr><tr><td>Ytri Tunga</td><td>nordical.com</td><td><a href="https://nordical.com/ytri-tunga-and-its-colony-of-seals/">source</a></td></tr><tr><td>Raudfeldsgja Gorge</td><td>quannum.com</td><td><a href="https://quannum.com/best-things-to-do-on-the-snaefellsnes-peninsula-in-1-day-itinerary/">source</a></td></tr><tr><td>Raudfeldsgja Gorge</td><td>thetravellinghiker.com</td><td><a href="https://thetravellinghiker.com/raudfeldsgja-gorge/">source</a></td></tr><tr><td>Bjarnarhofn Shark Museum</td><td>stuckiniceland.com</td><td><a href="https://www.stuckiniceland.com/icelandic-shark-bjarnarhofn/">source</a></td></tr><tr><td>Ring Road</td><td>heyiceland.is</td><td><a href="https://www.heyiceland.is/blog/nanar/5276/the-ring-road-and-the-other-four-of-icelands-main-driving-routes">source</a></td></tr><tr><td>Westfjords Way</td><td>bikepacking.com</td><td><a href="https://bikepacking.com/routes/westfjords-way/">source</a></td></tr><tr><td>Westfjords</td><td>westfjords.is</td><td><a href="https://www.westfjords.is/">source</a></td></tr><tr><td>North Iceland</td><td>nordicvisitor.com</td><td><a href="https://www.nordicvisitor.com/blog/must-see-places-north-iceland/">source</a></td></tr><tr><td>Diamond Circle</td><td>icelandair.com</td><td><a href="https://www.icelandair.com/blog/diamond-circle-tourist-route/">source</a></td></tr><tr><td>Eastfjords</td><td>visiticeland.com</td><td><a href="https://www.visiticeland.com/article/the-eastfjords/">source</a></td></tr><tr><td>Dynjandi</td><td>guidetoiceland.is</td><td><a href="https://guidetoiceland.is/connect-with-locals/regina/dynjandi-the-jewel-of-the-westfjords">source</a></td></tr><tr><td>Latrabjarg</td><td>guidetoiceland.is</td><td><a href="https://guidetoiceland.is/connect-with-locals/regina/latrabjarg-in-the-westfjords">source</a></td></tr><tr><td>Raudisandur</td><td>adventures.com</td><td><a href="https://adventures.com/iceland/attractions/beaches/raudisandur-beach/">source</a></td></tr><tr><td>Hornstrandir</td><td>keytoiceland.com</td><td><a href="https://www.keytoiceland.com/nature/hornstrandir">source</a></td></tr><tr><td>Lake Myvatn</td><td>adventures.com</td><td><a href="https://adventures.com/iceland/attractions/lakes-lagoons/lake-myvatn/">source</a></td></tr><tr><td>Dettifoss</td><td>northiceland.is</td><td><a href="https://www.northiceland.is/en/place/dettifoss-waterfall">source</a></td></tr><tr><td>Asbyrgi</td><td>kimkim.com</td><td><a href="https://www.kimkim.com/e/asbyrgi-canyon-in-northern-iceland">source</a></td></tr><tr><td>Husavik</td><td>funiceland.is</td><td><a href="https://www.funiceland.is/places-to-go/towns-and-villages/husavik/">source</a></td></tr><tr><td>Godafoss</td><td>josephfiler.com</td><td><a href="https://www.josephfiler.com/photo/iceland-godafoss-waterfall-3485/">source</a></td></tr><tr><td>Dimmuborgir</td><td>reykjavikcars.com</td><td><a href="https://www.reykjavikcars.com/blog/activities/dimmuborgir">source</a></td></tr><tr><td>Hverir and Namaskard</td><td>mobileprints.com</td><td><a href="https://mobileprints.com/featured/iceland-geothermal-area-hverir-namaskard-matthias-hauser.html">source</a></td></tr><tr><td>Grjotagja Cave</td><td>ntounas.gr</td><td><a href="https://www.ntounas.gr/grjotagja-lava-cave-in-iceland/">source</a></td></tr><tr><td>Myvatn Nature Baths</td><td>northbound.is</td><td><a href="https://www.northbound.is/blog/273/ultimate-guide-to-the-best-natural-hot-springs-and-geothermal-pools-in-iceland">source</a></td></tr><tr><td>Borgarfjordur Eystri</td><td>hiticeland.com</td><td><a href="https://www.hiticeland.com/post/borgarfjordur-eystri-bakkagerdi-village-in-east-fjords-iceland">source</a></td></tr><tr><td>Viknaslodir Trails</td><td>yourfriendinreykjavik.com</td><td><a href="https://yourfriendinreykjavik.com/tour/5-day-hiking-the-viknaslodir-trails/">source</a></td></tr><tr><td>Hallormsstadur</td><td>marinatravel.is</td><td><a href="https://marinatravel.is/hallormsstadur-national-forest/">source</a></td></tr><tr><td>Silver Circle</td><td>zigzagonearth.com</td><td><a href="https://www.zigzagonearth.com/da/rejseguide-island/">source</a></td></tr><tr><td>Hraunfossar</td><td>funiceland.is</td><td><a href="https://www.funiceland.is/nature/waterfalls/hraunfossar/">source</a></td></tr><tr><td>Husafell</td><td>icelandtravelguide.is</td><td><a href="https://icelandtravelguide.is/locations/husafell/">source</a></td></tr><tr><td>Seltjarnarnes and Grotta</td><td>visitreykjavik.is</td><td><a href="https://visitreykjavik.is/city-areas/seltjarnarnes-grotta">source</a></td></tr><tr><td>Sun Voyager</td><td>deanmcleodphotography.com</td><td><a href="https://www.deanmcleodphotography.com/photo/sun-voyager-iceland/">source</a></td></tr><tr><td>Ellidaardalur</td><td>icelandthebeautiful.com</td><td><a href="https://icelandthebeautiful.com/ellidaardalur-valley-reykjavik/">source</a></td></tr><tr><td>Videy Island</td><td>icelandtravelguide.is</td><td><a href="https://icelandtravelguide.is/locations/videy-island/">source</a></td></tr><tr><td>Reykjavik Whale Watching</td><td>extremeiceland.is</td><td><a href="https://www.extremeiceland.is/en/activity-tours-iceland/whale-watching-iceland/whale-watching">source</a></td></tr><tr><td>Mosfellsbaer</td><td>visitnordic.com</td><td><a href="https://www.visitnordic.com/en/attraction/mosfellsbaer-routes">source</a></td></tr><tr><td>Selfoss</td><td>icelandia.com</td><td><a href="https://www.icelandia.com/attractions/selfoss">source</a></td></tr><tr><td>Skogar</td><td>icelandtravelguide.is</td><td><a href="https://icelandtravelguide.is/locations/skogar/">source</a></td></tr></tbody></table>
+    </section>
+  </main>
+</body>
+</html>
