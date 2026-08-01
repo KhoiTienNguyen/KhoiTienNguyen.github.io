@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 610" role="img" aria-labelledby="title desc">
+<title id="title">Optional route swaps</title><desc id="desc">Safranbolu and the southeast alternatives.</desc>
+<defs><filter id="grain"><feTurbulence baseFrequency=".74" numOctaves="3" seed="7" result="n"/><feBlend in="SourceGraphic" in2="n" mode="multiply"/></filter></defs>
+<style>
+.land{fill:#eadbc2;stroke:#211c18;stroke-width:2} .route{fill:none;stroke:#c56845;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1 13}
+.ghost{fill:none;stroke:#b77b57;stroke-width:2;opacity:.33} .dot{fill:#c56845;stroke:#fbf7ef;stroke-width:4} .place{font:700 18px Arial,sans-serif;fill:#211c18} .num{font:12px monospace;fill:#64705a;letter-spacing:2px}
+</style>
+<rect width="1000" height="610" rx="30" fill="#f6efe2"/>
+<path class="land" d="M92 198 C151 118 254 96 345 118 C430 77 565 91 643 126 C746 105 885 154 925 230 C877 276 894 359 809 390 C748 458 643 487 554 459 C471 501 357 494 289 451 C193 462 112 409 128 331 C75 293 62 239 92 198Z"/>
+<path class="ghost" d="M122 326 C297 273 423 313 525 247 C664 157 781 203 895 247"/>
+<path class="route" d="M 180 170 L 410 170 L 635 250 L 760 315 L 852 355 L 900 410"/><circle cx="180" cy="170" r="8" class="dot"/><text x="198" y="156" text-anchor="start" class="place">Istanbul</text><text x="198" y="179" text-anchor="start" class="num">01</text><circle cx="410" cy="170" r="8" class="dot"/><text x="428" y="156" text-anchor="start" class="place">Safranbolu</text><text x="428" y="179" text-anchor="start" class="num">02</text><circle cx="635" cy="250" r="8" class="dot"/><text x="653" y="236" text-anchor="start" class="place">Cappadocia</text><text x="653" y="259" text-anchor="start" class="num">03</text><circle cx="760" cy="315" r="8" class="dot"/><text x="742" y="301" text-anchor="end" class="place">Gaziantep</text><text x="742" y="324" text-anchor="end" class="num">04</text><circle cx="852" cy="355" r="8" class="dot"/><text x="834" y="341" text-anchor="end" class="place">Şanlıurfa</text><text x="834" y="364" text-anchor="end" class="num">05</text><circle cx="900" cy="410" r="8" class="dot"/><text x="882" y="396" text-anchor="end" class="place">Mardin</text><text x="882" y="419" text-anchor="end" class="num">06</text>
+</svg>
